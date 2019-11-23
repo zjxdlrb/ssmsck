@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
-Built-By: DELL
-=======
 Built-By: 鲁
->>>>>>> 5aa1d564ea01ce89765c15d6f9e5ec68f075b957
 Created-By: IntelliJ IDEA
 Build-Jdk: 1.8.0_60
 
