@@ -16,15 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping("/test")
 public class TestController {
-    //zjx
 
     @Autowired
     public TestService testService;
 
-    //11111
-    //鲁梦苇！！！！！！
-    //彭璇
-    //hhOK的
 
     @RequestMapping("/queryTest")
     public ModelAndView queryTest(TestEntity testEntity, HttpServletRequest request, HttpServletResponse response){
