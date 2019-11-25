@@ -8,185 +8,187 @@ import com.zhg.javakc.base.entity.BaseEntity;
      */
     public class SupplierEntity extends BaseEntity<SupplierEntity> {
         //供应商主键ID
-        private String SupplierId;
+        private String supplierId;
         //编码
-        private String SupplierCoding;
+        private String supplierCoding;
         //供应商类型
-        private String SupplierType;
+        private String supplierType;
         //供应商名称
-        private String SupplierName;
+        private String supplierName;
         //供应商简称
-        private String SupplierShortened;
+        private String supplierShortened;
         //缩写
-        private String SupplierAbbreviation;
+        private String supplierAbbreviation;
         //法人
-        private String SupplierCorporation;
+        private String supplierCorporation;
         //法人电话
-        private String SupplierLegalPersonPhone;
+        private String supplierLegalPersonPhone;
         //供应商地址
-        private String SupplierSite;
+        private String supplierSite;
         //社会统一信任代码
-        private String SupplierTrustedCode;
+        private String supplierTrustedCode;
         //联系人
-        private String SupplierLinkman;
+        private String supplierLinkman;
         //联系人电话
-        private String SupplierPhone;
+        private String supplierPhone;
         //联系人邮箱
-        private String SupplierEmail;
+        private String supplierEmail;
         //是否有合同
-        private String SupplierContract;
+        private String supplierContract;
         //是否启用门户
-        private String SupplierShop;
+        private String supplierShop;
         //状态
-        private String SupplierState;
+        private String supplierState;
         //供应商内部组织
-        private String SupplierIn;
+        private String supplierIn;
         //是否启用:0否/1是
-        private String SupplierUse;
+        private String supplierUse;
+
 
         public String getSupplierId() {
-            return SupplierId;
+            return supplierId;
         }
 
         public void setSupplierId(String supplierId) {
-            SupplierId = supplierId;
+            this.supplierId = supplierId;
         }
 
         public String getSupplierCoding() {
-            return SupplierCoding;
+            return supplierCoding;
         }
 
         public void setSupplierCoding(String supplierCoding) {
-            SupplierCoding = supplierCoding;
+            this.supplierCoding = supplierCoding;
         }
 
         public String getSupplierType() {
-            return SupplierType;
+            return supplierType;
         }
 
         public void setSupplierType(String supplierType) {
-            SupplierType = supplierType;
+            this.supplierType = supplierType;
         }
 
         public String getSupplierName() {
-            return SupplierName;
+            return supplierName;
         }
 
         public void setSupplierName(String supplierName) {
-            SupplierName = supplierName;
+            this.supplierName = supplierName;
         }
 
         public String getSupplierShortened() {
-            return SupplierShortened;
+            return supplierShortened;
         }
 
         public void setSupplierShortened(String supplierShortened) {
-            SupplierShortened = supplierShortened;
+            this.supplierShortened = supplierShortened;
         }
 
         public String getSupplierAbbreviation() {
-            return SupplierAbbreviation;
+            return supplierAbbreviation;
         }
 
         public void setSupplierAbbreviation(String supplierAbbreviation) {
-            SupplierAbbreviation = supplierAbbreviation;
+            this.supplierAbbreviation = supplierAbbreviation;
         }
 
         public String getSupplierCorporation() {
-            return SupplierCorporation;
+            return supplierCorporation;
         }
 
         public void setSupplierCorporation(String supplierCorporation) {
-            SupplierCorporation = supplierCorporation;
+            this.supplierCorporation = supplierCorporation;
         }
 
         public String getSupplierLegalPersonPhone() {
-            return SupplierLegalPersonPhone;
+            return supplierLegalPersonPhone;
         }
 
         public void setSupplierLegalPersonPhone(String supplierLegalPersonPhone) {
-            SupplierLegalPersonPhone = supplierLegalPersonPhone;
+            this.supplierLegalPersonPhone = supplierLegalPersonPhone;
         }
 
         public String getSupplierSite() {
-            return SupplierSite;
+            return supplierSite;
         }
 
         public void setSupplierSite(String supplierSite) {
-            SupplierSite = supplierSite;
+            this.supplierSite = supplierSite;
         }
 
         public String getSupplierTrustedCode() {
-            return SupplierTrustedCode;
+            return supplierTrustedCode;
         }
 
         public void setSupplierTrustedCode(String supplierTrustedCode) {
-            SupplierTrustedCode = supplierTrustedCode;
+            this.supplierTrustedCode = supplierTrustedCode;
         }
 
         public String getSupplierLinkman() {
-            return SupplierLinkman;
+            return supplierLinkman;
         }
 
         public void setSupplierLinkman(String supplierLinkman) {
-            SupplierLinkman = supplierLinkman;
+            this.supplierLinkman = supplierLinkman;
         }
 
         public String getSupplierPhone() {
-            return SupplierPhone;
+            return supplierPhone;
         }
 
         public void setSupplierPhone(String supplierPhone) {
-            SupplierPhone = supplierPhone;
+            this.supplierPhone = supplierPhone;
         }
 
         public String getSupplierEmail() {
-            return SupplierEmail;
+            return supplierEmail;
         }
 
         public void setSupplierEmail(String supplierEmail) {
-            SupplierEmail = supplierEmail;
+            this.supplierEmail = supplierEmail;
         }
 
         public String getSupplierContract() {
-            return SupplierContract;
+            return supplierContract;
         }
 
         public void setSupplierContract(String supplierContract) {
-            SupplierContract = supplierContract;
+            this.supplierContract = supplierContract;
         }
 
         public String getSupplierShop() {
-            return SupplierShop;
+            return supplierShop;
         }
 
         public void setSupplierShop(String supplierShop) {
-            SupplierShop = supplierShop;
+            this.supplierShop = supplierShop;
         }
 
         public String getSupplierState() {
-            return SupplierState;
+            return supplierState;
         }
 
         public void setSupplierState(String supplierState) {
-            SupplierState = supplierState;
+            this.supplierState = supplierState;
         }
 
         public String getSupplierIn() {
-            return SupplierIn;
+            return supplierIn;
         }
 
         public void setSupplierIn(String supplierIn) {
-            SupplierIn = supplierIn;
+            this.supplierIn = supplierIn;
         }
 
         public String getSupplierUse() {
-            return SupplierUse;
+            return supplierUse;
         }
 
         public void setSupplierUse(String supplierUse) {
-            SupplierUse = supplierUse;
+            this.supplierUse = supplierUse;
         }
+
 
 
 
