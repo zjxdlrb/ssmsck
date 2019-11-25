@@ -5,7 +5,7 @@ import com.zhg.javakc.base.entity.BaseEntity;
 
 import java.util.Date;
 
-public class MaterialsEntity extends BaseEntity {
+public class MaterialsEntity extends BaseEntity<MaterialsEntity> {
     //id主键
     private String materialsId;
     //物资分类外键ID
