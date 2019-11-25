@@ -1,13 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< Updated upstream
-Built-By: dell
-=======
-<<<<<<< HEAD
-Built-By: ASUS
-=======
 Built-By: DELL
->>>>>>> 6552c24882ebafe689928ac2f061c5c91e792805
->>>>>>> Stashed changes
 Created-By: IntelliJ IDEA
 Build-Jdk: 1.8.0_60
 
