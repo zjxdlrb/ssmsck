@@ -1,4 +1,4 @@
-package com.zhg.javakc.modules.materials.entity;
+package com.zhg.javakc.modules.smscke.materials.entity;
 
 
 import com.zhg.javakc.base.entity.BaseEntity;
