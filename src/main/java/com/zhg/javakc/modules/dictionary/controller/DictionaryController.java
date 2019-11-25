@@ -44,7 +44,8 @@ public class DictionaryController {
 		return "dictionary/list";
 	}
 	
-	/**
+	/*0
+
 	 * 添加方法
 	 * @param entity 实体对象
 	 * @return

@@ -28,8 +28,7 @@ public class OrganizationController {
     public String save(OrganizationEntity organizationEntity){
         organizationEntity.setOrganizationId(CommonUtil.uuid());
         organizationService.save(organizationEntity);
-        System.out.println(2);
-        return "smscke/public/orgredio/list";
+        return "redirect:/view/smscke/public/orgredio/list.jsp";
     }
 
 
