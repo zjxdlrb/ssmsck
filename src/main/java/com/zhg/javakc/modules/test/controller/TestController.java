@@ -20,6 +20,7 @@ public class TestController {
     @Autowired
     public TestService testService;
 
+
     @RequestMapping("/queryTest")
     public ModelAndView queryTest(TestEntity testEntity, HttpServletRequest request, HttpServletResponse response){
         ModelAndView modelAndView=new ModelAndView("test/list");

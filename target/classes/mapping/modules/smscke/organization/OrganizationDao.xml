@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.smscke.organization.dao.OrganizationDao">
+
+	<select id="queryAllOrg" resultType="java.util.HashMap">
+
+		SELECT
+		ORGANIZATION_ID "id",
+		ORGANIZATION_NAME "name",
+		ORGANIZATION_PID "pId",
+		ORGANIZATION_LEVEL "orglevel"
+		FROM SMSCKE_ORGANIZATION WHERE 1=1 ORDER BY ORGANIZATION_ORDER ASC
+
+	</select>
+
+	<insert id="insert">
+
+		INSERT INTO SMSCKE_ORGANIZATION (ORGANIZATION_ID,ORGANIZATION_NAME,ORGANIZATION_PID,ORGANIZATION_ORDER)
+		VALUES (#{organizationId},#{organizationName},#{organizationPid},seq_smscke_organization.nextval)
+
+	</insert>
+
+	
+</mapper>
