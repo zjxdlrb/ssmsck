@@ -127,4 +127,35 @@
     </bean>
     <!-- redis config end -->
 
+	<!-- 目标类 -->
+	 <bean class="com.zhg.javakc.modules.test.controller.QtzTest" id="qtzTest"></bean>
+
+	<!-- job Detail -->
+    <bean
+			class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean" id="jobDetailFactoryBean">
+
+		<property name="targetObject" ref="qtzTest"></property>
+		<property name="targetMethod" value="send"></property>
+
+	</bean>
+
+	<!-- 调度触发器 -->
+	<bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="cronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="jobDetailFactoryBean"></ref>
+		</property>
+		<property name="cronExpression" value="*/5 * * * * ?"></property>
+	</bean>
+
+	<!-- 调度工厂 -->
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean" id="schedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronTriggerFactoryBean"></ref>
+			</list>
+		</property>
+
+	</bean>
+
+
 </beans>
