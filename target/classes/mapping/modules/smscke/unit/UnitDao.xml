@@ -16,7 +16,7 @@
 
     <select id="get" resultType="com.zhg.javakc.modules.smscke.unit.entity.UnitEntity">
 	    SELECT UNIT_ID AS unitId,UNIT_CODING AS unitCoding,UNIT_CODE AS unitCode, UNIT_NAME AS unitName
-		FROM SMSCKE_UNIT WHERE UNIT_ID=#{0}
+		FROM SMSCKE_UNIT WHERE UNIT_ID=#{1}
 	</select>
 
     <update id="update">

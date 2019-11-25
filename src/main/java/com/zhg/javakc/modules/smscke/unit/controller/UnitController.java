@@ -39,7 +39,7 @@ public class UnitController {
     public String view(String ids, ModelMap modelMap){
         UnitEntity unitEntity=unitService.get(ids);
         modelMap.put("unitEntity",unitEntity);
-        return "smsckeunit/update";
+        return "smscke/unit/update";
     }
     @RequestMapping("/update")
     public String update(UnitEntity unitEntity){

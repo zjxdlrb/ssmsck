@@ -11,6 +11,7 @@
 <%--			<div>--%>
 <%--				<div class="col-sm-4"><input type="button" value="返回" class="btn btn-success" onclick="javascript:history.back();"/></div>--%>
 <%--			</div>--%>
+
 			<div class="ibox float-e-margins">
 				<form action="${path }/smsckeunit/update.do" method="post" class="form-horizontal" role="form">
 					<input type="hidden" name="unitId" id="unitId" value="${unitEntity.unitId}"/>
@@ -19,11 +20,11 @@
                        <div class="form-group">
                           <label class="col-sm-1 control-label" for="ds_host">单位代码</label>
                           <div class="col-sm-5">
-                             <input class="form-control" type="text" name="${unitEntity.unitCode}"/>
+                             <input class="form-control" type="text" name="unitCode" value="${unitEntity.unitCode}"/>
                           </div>
                           <label class="col-sm-1 control-label" for="ds_name">单位名称</label>
                           <div class="col-sm-5">
-							  <input class="form-control" type="text" name="${unitEntity.unitName}"/>
+							  <input class="form-control" type="text" name="unitName" value="${unitEntity.unitName}"/>
                           </div>
                     </fieldset>     
 

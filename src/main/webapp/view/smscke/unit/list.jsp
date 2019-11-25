@@ -18,9 +18,9 @@
                 			<button type="button" class="btn btn-success" data-toggle="modal" id="create" name="smscke/unit/create.jsp">
 	                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>新增
 	                        </button>
-							<button type="button" class="btn btn-success" data-toggle="modal" id="update" name="smscke/smackeunit/view.do">
-								<i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>修改
-							</button>
+<%--							<button type="button" class="btn btn-success" data-toggle="modal" id="update" name="smsckeunit/view.do">--%>
+<%--								<i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>修改--%>
+<%--							</button>--%>
 		                 </div>
 	                </div>
 
@@ -43,7 +43,8 @@
 						                <td><input type="checkbox" name="ids" value="${e.unitId }"/></td>
 										<td>${e.unitCode }</td>
 						                <td>${e.unitName }</td>
-										<td ><a type="button" onclick="smsckeunit/view.do"/>编辑
+										<td ><button type="button" class="btn btn-success" data-toggle="modal" id="update" name="smsckeunit/view.do">
+                                            <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>编辑</button>
 										</td>
 						            </tr>
 					            </c:forEach>
