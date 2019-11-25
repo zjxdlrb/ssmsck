@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.smscke.supplier.dao.SupplierDao">
+
+    <select id="querySupList" resultType="java.util.HashMap">
+
+		SELECT
+		supplier_coding "supcode",
+		supplier_name "supname",
+		supplier_type "suptype",
+		supplier_linkman "suplinkman",
+		supplier_phone "supphone",
+		supplier_contract "supcontract",
+		supplier_shop "supshop"
+
+        FROM smscke_supplier WHERE 1=1
+
+	</select>
+
+<!--    <insert id="insert">-->
+
+<!--		INSERT INTO SMSCKE_ORGANIZATION (ORGANIZATION_ID,ORGANIZATION_NAME,ORGANIZATION_PID,ORGANIZATION_ORDER)-->
+<!--		VALUES (#{organizationId},#{organizationName},#{organizationPid},seq_smscke_organization.nextval)-->
+
+<!--	</insert>-->
+
+
+</mapper>
