@@ -5,6 +5,7 @@
     <select id="querySupList" resultType="java.util.HashMap">
 
 		SELECT
+		supplier_id "supid",
 		supplier_coding "supcode",
 		supplier_name "supname",
 		supplier_type "suptype",
@@ -13,7 +14,7 @@
 		supplier_contract "supcontract",
 		supplier_shop "supshop"
 
-        FROM smscke_supplier WHERE 1=1
+        FROM smscke_supplier WHERE 1=1 ORDER BY supplier_coding ASC
 
 	</select>
 

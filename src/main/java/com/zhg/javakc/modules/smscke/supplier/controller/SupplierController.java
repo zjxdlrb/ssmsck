@@ -1,11 +1,16 @@
 package com.zhg.javakc.modules.smscke.supplier.controller;
 
+import com.zhg.javakc.base.page.Page;
+import com.zhg.javakc.modules.smscke.supplier.entity.SupplierEntity;
 import com.zhg.javakc.modules.smscke.supplier.service.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 
@@ -18,9 +23,10 @@ public class SupplierController {
 
     @RequestMapping("/querySupList")
     @ResponseBody
-    public List<Map<String,Object>> querySup(){
-        List<Map<String,Object>> list=supplierService.querySupList();
-        System.out.println(list.toString());
-        return list;
+    public ModelAndView queryUnit(SupplierEntity supplierEntity, HttpServletRequest request, HttpServletResponse response){
+        ModelAndView modelAndView=new ModelAndView("smscke/supplier/list");
+        Page<SupplierEntity> page=supplierService.querySupList(supplierEntity,new Page<SupplierEntity>(request,response));
+        modelAndView.addObject("page",page);
+        return modelAndView;
     }
 }
