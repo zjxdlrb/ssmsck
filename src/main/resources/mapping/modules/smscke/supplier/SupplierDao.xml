@@ -22,10 +22,32 @@
 
     <insert id="insert">
 
-		INSERT INTO smscke_supplier (SUPPLIER_ID,SUPPLIER_CODING,SUPPLIER_TYPE,SUPPLIER_NAME,SUPPLIER_CLASSIFY,SUPPLIER_SHORTENED,SUPPLIER_CORPORATION,SUPPLIER_LEGAL_PERSON_PHONE,SUPPLIER_SITE,SUPPLIER_TRUSTED_CODE,SUPPLIER_LINKMAN,SUPPLIER_PHONE,SUPPLIER_EMAIL,SUPPLIER_SHOP,SUPPLIER_CONTRACT,SUPPLIER_IN)
-		VALUES (#{supplierId},#{supplierCoding},#{supplierType},#{supplierName},#{supplierClassify},#{supplierShortened},#{supplierCorporation},#{supplierLegalPersonPhone},#{supplierSite},#{supplierTrustedCode},#{supplierLinkman},#{supplierPhone},#{supplierEmail},#{supplierShop},#{supplierContract},#{supplierIn})
+		INSERT INTO smscke_supplier (SUPPLIER_ID,SUPPLIER_CODING,SUPPLIER_TYPE,SUPPLIER_NAME,SUPPLIER_CLASSIFY,SUPPLIER_SHORTENED,SUPPLIER_CORPORATION,SUPPLIER_LEGAL_PERSON_PHONE,SUPPLIER_SITE,SUPPLIER_TRUSTED_CODE,SUPPLIER_LINKMAN,SUPPLIER_PHONE,SUPPLIER_EMAIL,SUPPLIER_SHOP,SUPPLIER_CONTRACT)
+		VALUES (#{supplierId},#{supplierCoding},#{supplierType},#{supplierName},#{supplierClassify},#{supplierShortened},#{supplierCorporation},#{supplierLegalPersonPhone},#{supplierSite},#{supplierTrustedCode},#{supplierLinkman},#{supplierPhone},#{supplierEmail},#{supplierShop},#{supplierContract})
 
 	</insert>
 
+	<select id="get" resultType="com.zhg.javakc.modules.test.entity.TestEntity">
+		SELECT SUPPLIER_ID AS supplierId, SUPPLIER_TYPE AS supplierType, SUPPLIER_NAME AS supplierName, SUPPLIER_CLASSIFY AS supplierClassify ,SUPPLIER_SHORTENED AS supplierShortened,SUPPLIER_CORPORATION AS supplierCorporation,SUPPLIER_LEGAL_PERSON_PHONE AS supplierLegalPersonPhone,SUPPLIER_SITE AS supplierSite,SUPPLIER_TRUSTED_CODE AS supplierTrustedCode,SUPPLIER_LINKMAN AS supplierLinkman,SUPPLIER_PHONE AS supplierPhone,SUPPLIER_EMAIL AS supplierEmail,SUPPLIER_SHOP AS supplierShop,SUPPLIER_CONTRACT AS supplierContract
+		FROM smscke_supplier WHERE SUPPLIER_ID=#{0}
+	</select>
 
+	<update id="update">
+		UPDATE smscke_supplier SET
+		  SUPPLIER_ID = #{supplierId},
+          SUPPLIER_TYPE = #{supplierType},
+          SUPPLIER_NAME = #{supplierName},
+          SUPPLIER_CLASSIFY = #{supplierClassify},
+          SUPPLIER_SHORTENED = #{supplierShortened},
+          SUPPLIER_CORPORATION = #{supplierCorporation},
+          SUPPLIER_LEGAL_PERSON_PHONE = #{supplierLegalPersonPhone},
+          SUPPLIER_SITE = #{supplierSite},
+          SUPPLIER_TRUSTED_CODE = #{supplierTrustedCode},
+          SUPPLIER_LINKMAN = #{supplierLinkman},
+          SUPPLIER_PHONE = #{supplierPhone},
+          SUPPLIER_EMAIL = #{supplierEmail},
+          SUPPLIER_SHOP = #{supplierShop},
+          SUPPLIER_CONTRACT = #{supplierContract}
+		WHERE SUPPLIER_ID=#{supplierId}
+	</update>
 </mapper>
