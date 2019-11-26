@@ -22,8 +22,8 @@
 
     <insert id="insert">
 
-		INSERT INTO smscke_supplier (SUPPLIER_ID,SUPPLIER_TYPE,SUPPLIER_CLASSIFY,SUPPLIER_SHORTENED,SUPPLIER_CORPORATION,SUPPLIER_LEGAL_PERSON_PHONE,SUPPLIER_SITE,SUPPLIER_TRUSTED_CODE,SUPPLIER_LINKMAN,SUPPLIER_PHONE,SUPPLIER_EMAIL,SUPPLIER_SHOP,SUPPLIER_CONTRACT)
-		VALUES (#{supplierId},#{supplierType},#{supplierClassify},#{supplierShortened},#{supplierCorporation},#{supplierLegal},#{supplierLegalPersonPhone},#{supplierSite},#{supplierTrustedCode},#{supplierLinkman},#{supplierPhone},#{supplierEmail},#{supplierShop},#{supplierContract})
+		INSERT INTO smscke_supplier (SUPPLIER_ID,SUPPLIER_TYPE,SUPPLIER_NAME,SUPPLIER_CLASSIFY,SUPPLIER_SHORTENED,SUPPLIER_CORPORATION,SUPPLIER_LEGAL_PERSON_PHONE,SUPPLIER_SITE,SUPPLIER_TRUSTED_CODE,SUPPLIER_LINKMAN,SUPPLIER_PHONE,SUPPLIER_EMAIL,SUPPLIER_SHOP,SUPPLIER_CONTRACT,SUPPLIER_IN)
+		VALUES (#{supplierId},#{supplierType},#{supplierName},#{supplierClassify},#{supplierShortened},#{supplierCorporation},#{supplierLegalPersonPhone},#{supplierSite},#{supplierTrustedCode},#{supplierLinkman},#{supplierPhone},#{supplierEmail},#{supplierShop},#{supplierContract},#{supplierIn})
 
 	</insert>
 

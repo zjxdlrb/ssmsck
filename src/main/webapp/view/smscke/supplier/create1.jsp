@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>供应商添加页面</title>
+    <title>供应商列表添加页面</title>
     <%@ include file="../../../common/jsp/header.jsp"%>
     <link href="${path }/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
 </head>
@@ -129,6 +129,11 @@
                     <div class="col-sm-5">
                         <input type="submit" value="提交" class="btn btn-success"/>
                     </div>
+                    <label class="col-sm-1 control-label" for="ds_host"></label>
+                    <div class="col-sm-5">
+                        <input type="button" value="返回" class="btn btn-success" onclick="javascript:history.back();"/>
+                    </div>
+                </div>
             </fieldset>
         </form>
     </div>

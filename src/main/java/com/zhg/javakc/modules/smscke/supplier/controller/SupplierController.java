@@ -1,6 +1,7 @@
 package com.zhg.javakc.modules.smscke.supplier.controller;
 
 import com.zhg.javakc.base.page.Page;
+import com.zhg.javakc.base.util.CommonUtil;
 import com.zhg.javakc.modules.smscke.supplier.entity.SupplierEntity;
 import com.zhg.javakc.modules.smscke.supplier.service.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,17 @@ public class SupplierController {
         Page<SupplierEntity> page=supplierService.querySupList(supplierEntity,new Page<SupplierEntity>(request,response));
         modelAndView.addObject("page",page);
         return modelAndView;
+    }
+
+    @RequestMapping("/save")
+    public String save(SupplierEntity supplierEntity) {
+        // 设置ID
+        supplierEntity.setSupplierId(CommonUtil.uuid());
+        supplierEntity.setSupplierClassify(null);
+        System.out.println(supplierEntity.toString());
+        supplierService.save(supplierEntity);
+        return "redirect:querySupList.do";
+
     }
 
     @RequestMapping("/createParent")
