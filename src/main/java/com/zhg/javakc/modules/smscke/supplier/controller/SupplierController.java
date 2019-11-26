@@ -51,6 +51,19 @@ public class SupplierController {
 
     }
 
+    @RequestMapping("/view")
+    public String view(String ids, ModelMap modelMap){
+        SupplierEntity supplierEntity=supplierService.get(ids);
+        modelMap.put("supplierEntity",supplierEntity);
+        return "supplier/update";
+    }
+
+    @RequestMapping("/update")
+    public String update(SupplierEntity supplierEntity){
+        supplierService.update(supplierEntity);
+        return "redirect:querySupList.do";
+    }
+
     @RequestMapping("/createParent")
     @ResponseBody
     public String createParent(SupplierEntity Entity, ModelMap model){
