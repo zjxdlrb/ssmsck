@@ -5,6 +5,7 @@ import com.zhg.javakc.modules.smscke.supplier.entity.SupplierEntity;
 import com.zhg.javakc.modules.smscke.supplier.service.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,5 +29,12 @@ public class SupplierController {
         Page<SupplierEntity> page=supplierService.querySupList(supplierEntity,new Page<SupplierEntity>(request,response));
         modelAndView.addObject("page",page);
         return modelAndView;
+    }
+
+    @RequestMapping("/createParent")
+    @ResponseBody
+    public ModelAndView createParent(SupplierEntity Entity, ModelMap model){
+        model.put("page",supplierService.findList(Entity));
+        return "smscke/public/supplier/supplier";
     }
 }
