@@ -110,7 +110,7 @@
                     <div class="row">
                         <label class="col-sm-1 control-label" for="ds_host">启用门户</label>
                         <div class="col-sm-3">
-                            <input type="checkbox" name="supplierShop" value="1">
+                            <input type="checkbox" name="supplierShop" value="1" >
                         </div>
 
                         <label class="col-sm-1 control-label" for="ds_host">必须合同</label>
