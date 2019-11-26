@@ -7,6 +7,5 @@ import com.zhg.javakc.modules.smscke.supplier.entity.SupplierEntity;
 import java.util.List;
 import java.util.Map;
 
-@MyBatisDao
 public interface SupplierDao extends BaseDao<SupplierEntity> {
 }
