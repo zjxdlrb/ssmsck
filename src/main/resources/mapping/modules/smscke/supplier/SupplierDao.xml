@@ -13,7 +13,7 @@
 		supplier_phone as supplierPhone,
 		supplier_contract as supplierContract,
 		supplier_shop as supplierShop,
-		supplier_use as supplierUse
+		supplier_use as supplierUse,
 		supplier_abbreviation as supplierAbbreviation
 
         FROM smscke_supplier WHERE 1=1 ORDER BY supplier_coding ASC

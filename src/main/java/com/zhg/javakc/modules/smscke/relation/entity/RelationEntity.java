@@ -1,6 +1,9 @@
 package com.zhg.javakc.modules.smscke.relation.entity;
 
 import com.zhg.javakc.base.entity.BaseEntity;
+import com.zhg.javakc.modules.smscke.materials.entity.MaterialsEntity;
+import com.zhg.javakc.modules.smscke.organization.entity.OrganizationEntity;
+import com.zhg.javakc.modules.smscke.supplier.entity.SupplierEntity;
 
 /**
  *
@@ -13,6 +16,9 @@ public class RelationEntity extends BaseEntity<RelationEntity> {
     private String materialsId;
     private String taxRate;
     private String receiveOrganizationId;
+    private OrganizationEntity organizationEntity;
+    private MaterialsEntity materialsEntity;
+    private SupplierEntity supplierEntity;
 
     public String getRelationId() {
         return relationId;
@@ -60,5 +66,13 @@ public class RelationEntity extends BaseEntity<RelationEntity> {
 
     public void setReceiveOrganizationId(String receiveOrganizationId) {
         this.receiveOrganizationId = receiveOrganizationId;
+    }
+
+    public OrganizationEntity getOrganizationEntity() {
+        return organizationEntity;
+    }
+
+    public void setOrganizationEntity(OrganizationEntity organizationEntity) {
+        this.organizationEntity = organizationEntity;
     }
 }
