@@ -27,6 +27,7 @@
                 <!-- ------------按钮组 end------------ -->
                 <input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
                 <input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
+                <input id="supplierId" name="supplierId" type="hidden" value="${e.supplierId}"/>
                 <table class="table table-striped table-bordered table-hover table-condensed">
                     <thead>
                     <tr>
@@ -53,7 +54,8 @@
                             <td>${e.supplierPhone }</td>
                             <td>${e.supplierContract == 0?"":"√" }</td>
                             <td>${e.supplierShop == 0?"":"√" }</td>
-                            <td ><button type="button" class="btn btn-success" data-toggle="modal" id="update" name="supplier/update.do" ${e.supplierShop == 1?"disabled":""}>
+
+                            <td ><button type="button" class="btn btn-success" data-toggle="modal" id="update" onclick=""  ${e.supplierShop == 1?"disabled":""}>
                                 <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>编辑</button>
                             </td>
                             <td>${e.supplierUse == 0?"已禁用":"已启用" }</td>
