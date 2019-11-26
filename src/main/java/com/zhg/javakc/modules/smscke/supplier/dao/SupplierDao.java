@@ -9,5 +9,4 @@ import java.util.Map;
 
 @MyBatisDao
 public interface SupplierDao extends BaseDao<SupplierEntity> {
-    public List<Map<String,Object>> querySupList();
 }
