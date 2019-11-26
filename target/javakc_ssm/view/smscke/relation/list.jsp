@@ -36,12 +36,12 @@
 
 	                <div class="col-sm-3">
 	                	<div class="btn-group hidden-xs" role="group">
-                			<button type="button" class="btn btn-primary" data-toggle="modal" id="create" name="test/create.jsp">
-	                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>添加
+                			<button type="button" class="btn btn-primary" data-toggle="modal" id="query" name="">
+	                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>查询
 	                        </button>
-	                        <button type="button" class="btn btn-success" data-toggle="modal" id="update" name="test/view.do">
-	                            <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>查询
-	                        </button>
+							<button type="button" class="btn btn-primary" data-toggle="modal" id="create" name="smscke/relation/create.jsp">
+								<i class="glyphicon glyphicon-plus" aria-hidden="true"></i>添加
+							</button>
 	                        <button type="button" class="btn btn-danger" data-toggle="modal" id="delete" name="test/delete.do">
 	                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>删除
 	                        </button>
