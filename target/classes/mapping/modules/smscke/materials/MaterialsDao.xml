@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.smscke.materials.dao.MaterialsDao">
+
+
+    <select id="findList"
+            resultType="com.zhg.javakc.modules.smscke.materials.entity.MaterialsEntity">
+		SELECT
+    MATERIALS_ID materialsId,
+    MATERIALS_CLASSIFY materialsClassify,
+    MATERIALS_NAME materialsName,
+    MATERIALS_SPECIFICATION materialsSpecification,
+    MATERIALS_SHORTENED materialsShortened,
+    MATERIALS_DESCRIBE materialsDescribe,
+    MATERIALS_IMG materialsImg,
+    MATERIALS_TAGGING materialsTagging,
+    MATERIALS_TYPE materialsType,
+    MATERIALS_CONTRACT_RIGHTS materialsContractRights,
+    MATERIALS_MATTER materialsMatter,
+    MATERIALS_SHELF_LIFE materialsShelfLife,
+    MATERIALS_HOURLY_BASIS materialsHourlyBasis,
+    MATERIALS_TAX_RATE materialsTaxRate,
+    MATERIALS_UNIT materialsUnit,
+    PRODUCTION_UNIT productionUnit,
+    MATERIALS_SUTTLE materialsSuttle,
+    MATERIALS_ROUGH_WEIGHT materialsRoughWeight,
+    MATERIALS_LONG materialsLong,
+    MATERIALS_WIDE materialsWide,
+    MATERIALS_TALL materialsTall,
+    UNIT_LONG_WIDE_TALL unitLongWideTall,
+    MATERIALS_CODING materialsCoding,
+    MATERIALS_STATE  materialsState,
+    MATERIALS_CREATOR materialsCreator,
+    MATERIALS_ABBREVIATION materialsAbbreviation,
+    STANDARD_UNIT standardUnit,
+    AUXILIARY_UNIT auxiliaryUnit,
+    CREATE_DATE createDate,
+    UPDATE_DATE updateDate
+		FROM SMSCKE_MATERIALS WHERE 1=1
+	</select>
+
+
+</mapper> 
