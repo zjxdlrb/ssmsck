@@ -33,7 +33,7 @@ public class SupplierController {
 
     @RequestMapping("/createParent")
     @ResponseBody
-    public ModelAndView createParent(SupplierEntity Entity, ModelMap model){
+    public String createParent(SupplierEntity Entity, ModelMap model){
         model.put("page",supplierService.findList(Entity));
         return "smscke/public/supplier/supplier";
     }
