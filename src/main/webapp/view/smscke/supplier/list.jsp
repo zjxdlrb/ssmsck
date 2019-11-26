@@ -53,12 +53,12 @@
                             <td>${e.supplierPhone }</td>
                             <td>${e.supplierContract == 0?"":"√" }</td>
                             <td>${e.supplierShop == 0?"":"√" }</td>
-                            <td ><button type="button" class="btn btn-success" data-toggle="modal" id="update" name="supplier/supUpdate.do">
+                            <td ><button type="button" class="btn btn-success" data-toggle="modal" id="update" name="supplier/update.do" ${e.supplierShop == 1?"disabled":""}>
                                 <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>编辑</button>
                             </td>
-                            <td>${e.supplierUse == 0?"未启用":"已启用"}</td>
-                            <td ><button type="button" class="btn btn-success" data-toggle="modal" id="usermanager" name="supplier/supUpdate.do">
-                                <i class="glyphicon glyphicon-pencil" aria-hidden=${e.supplierUse == 0?"false":"true"}></i>账号管理</button>
+                            <td>${e.supplierUse == 0?"已禁用":"已启用" }</td>
+                            <td ><button type="button" class="btn btn-success" data-toggle="modal" id="usermanager" name="" ${e.supplierShop == 0?"disabled":""} >
+                                <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>账号管理</button>
                             </td>
                         </tr>
                     </c:forEach>
