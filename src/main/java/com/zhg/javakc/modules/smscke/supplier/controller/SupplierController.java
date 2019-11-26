@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 
 @Controller
@@ -36,8 +37,15 @@ public class SupplierController {
     public String save(SupplierEntity supplierEntity) {
         // 设置ID
         supplierEntity.setSupplierId(CommonUtil.uuid());
+        Random random = new Random();
+        String result="";
+        for (int i=0;i<7;i++)
+        {
+            result+=random.nextInt(10);
+        }
+        System.out.println(result);
+        supplierEntity.setSupplierCoding(result);
         supplierEntity.setSupplierClassify(null);
-        System.out.println(supplierEntity.toString());
         supplierService.save(supplierEntity);
         return "redirect:querySupList.do";
 
