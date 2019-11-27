@@ -21,8 +21,8 @@
                         <button type="button" class="btn btn-success" data-toggle="modal" id="update" name="supplier/view.do">
                             <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>修改
                         </button>
-                        <button type="button" class="btn btn-success" data-toggle="modal" id="View" name="supplier/View.do">
-                            <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>查看
+                        <button type="button" class="btn btn-success" data-toggle="modal" id="delete" name="supplier/View.do">
+                            <i class="glyphicon glyphicon-book" aria-hidden="true"></i>查看
                         </button>
                     </div>
                 </div>
@@ -63,7 +63,10 @@
 <%--                            <td><input type="submit" value="编辑" class="btn btn-success" data-toggle="modal" id="update"  ${e.supplierShop == 1?"disabled":""}>--%>
 <%--                            </td>--%>
 <%--                            </form>--%>
-                            <td>${e.supplierUse == 0?"已禁用":"已启用" }</td>
+                            <td><input type="checkbox" name="menustate" ${e.supplierUse==0?"checked":"" } disabled
+                                       data-on-text="启用" data-off-text="禁用"
+                                       data-on="primary" data-off="danger"/>
+                            </td>
                             <td ><button type="button" class="btn btn-success" data-toggle="modal" id="usermanager" name="" ${e.supplierShop == 0?"disabled":""} >
                                 <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>账号管理</button>
                             </td>

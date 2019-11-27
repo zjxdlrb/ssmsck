@@ -8,9 +8,9 @@
 </head>
 <body>
 <div class="wrapper wrapper-content animated fadeInRight">
-    <%--			<div>--%>
-    <%--				<div class="col-sm-4"><input type="button" value="返回" class="btn btn-success" onclick="javascript:history.back();"/></div>--%>
-    <%--			</div>--%>
+    <div>
+        <div class="col-sm-4"><input type="button" value="返回上一页" class="btn btn-success" onclick="javascript:history.back();"/></div>
+    </div>
     <div class="ibox float-e-margins">
         <form action="${path }/supplier/save.do" method="post" class="form-horizontal" role="form">
             <fieldset>
@@ -110,12 +110,12 @@
                     <div class="row">
                         <label class="col-sm-1 control-label" for="ds_host">启用门户</label>
                         <div class="col-sm-3">
-                            <input type="checkbox" id="supplierShop" value="0" name="supplierShop" onclick="javascript:document.getElementById('supplierShop').value=1">
+                            <input type="checkbox" name="supplierShop" value="0" onclick="this.value=(this.value==0?1:0)"/>
                         </div>
 
                         <label class="col-sm-1 control-label" for="ds_host">必须合同</label>
                         <div class="col-sm-3">
-                            <input type="checkbox" name="supplierContract" id="supplierContract" value="0"  onclick="javascript:document.getElementById('supplierContract').value=1">
+                            <input type="checkbox" name="supplierContract" value="0" onclick="this.value=(this.value==0?1:0)"/>
                         </div>
                    </div>
 
@@ -130,8 +130,8 @@
                         <input type="submit" value="提交" class="btn btn-success"/>
                     </div>
                     <label class="col-sm-1 control-label" for="ds_host"></label>
-                    <div class="col-sm-5">
-                        <input type="button" value="返回" class="btn btn-success" onclick="javascript:history.back();"/>
+                    <div class="col-sm-4">
+                        <input type="reset" value="重置" class="btn btn-danger" id="resetForm"/>
                     </div>
                 </div>
             </fieldset>

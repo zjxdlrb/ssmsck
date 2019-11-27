@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>供应商添加页面</title>
+    <title>供应商详情</title>
     <%@ include file="../../../common/jsp/header.jsp"%>
     <link href="${path }/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
 </head>
@@ -15,7 +15,7 @@
         <form action="${path }/supplier/update.do" method="post" class="form-horizontal" role="form">
             <input type="hidden" name="supplierId" id="supplierId" value="${supplierEntity.supplierId}"/>
             <fieldset>
-                <legend>供应商修改</legend>
+                <legend>供应商详情</legend>
                 <div class="row">
                     <label class="col-sm-1 control-label" for="ds_host">供应商类型</label>
                     <div class="col-sm-4" >
@@ -31,7 +31,7 @@
                 <div class="row">
                     <label class="col-sm-1 control-label" for="ds_host">供应商名称</label>
                     <div class="col-sm-3">
-                        <td>supplierEntity.supplierName</td>
+                        <td>${supplierEntity.supplierName}</td>
                     </div>
                     <label class="col-sm-1 control-label" for="ds_host">供应商分类</label>
                     <div class="col-sm-3">
@@ -101,9 +101,13 @@
 
 
                     <div class="row">
+                        <label class="col-sm-1 control-label" for="ds_host">状态</label>
+                        <div class="col-sm-3">
+                            <td>   ${supplierEntity.supplierState == 1?"已启用":"未启用"}</td>
+                        </div>
                         <label class="col-sm-1 control-label" for="ds_host">启用门户</label>
                         <div class="col-sm-3">
-                            <td>   ${supplierEntity.supplierShop == 1?"√":""}> </td>
+                            <td>   ${supplierEntity.supplierShop == 1?"√":""}</td>
                         </div>
 
                         <label class="col-sm-1 control-label" for="ds_host">必须合同</label>

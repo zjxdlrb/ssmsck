@@ -28,7 +28,7 @@
 	</insert>
 
 	<select id="get" resultType="com.zhg.javakc.modules.smscke.supplier.entity.SupplierEntity">
-		SELECT SUPPLIER_ID AS supplierId, SUPPLIER_TYPE AS supplierType, SUPPLIER_NAME AS supplierName, SUPPLIER_CLASSIFY AS supplierClassify ,SUPPLIER_SHORTENED AS supplierShortened,SUPPLIER_CORPORATION AS supplierCorporation,SUPPLIER_LEGAL_PERSON_PHONE AS supplierLegalPersonPhone,SUPPLIER_SITE AS supplierSite,SUPPLIER_TRUSTED_CODE AS supplierTrustedCode,SUPPLIER_LINKMAN AS supplierLinkman,SUPPLIER_PHONE AS supplierPhone,SUPPLIER_EMAIL AS supplierEmail,SUPPLIER_SHOP AS supplierShop,SUPPLIER_CONTRACT AS supplierContract
+		SELECT SUPPLIER_ID AS supplierId, SUPPLIER_TYPE AS supplierType, SUPPLIER_NAME AS supplierName, SUPPLIER_CLASSIFY AS supplierClassify ,SUPPLIER_SHORTENED AS supplierShortened,SUPPLIER_CORPORATION AS supplierCorporation,SUPPLIER_LEGAL_PERSON_PHONE AS supplierLegalPersonPhone,SUPPLIER_SITE AS supplierSite,SUPPLIER_TRUSTED_CODE AS supplierTrustedCode,SUPPLIER_LINKMAN AS supplierLinkman,SUPPLIER_PHONE AS supplierPhone,SUPPLIER_EMAIL AS supplierEmail,SUPPLIER_SHOP AS supplierShop,SUPPLIER_CONTRACT AS supplierContract,SUPPLIER_STATE AS supplierState
 		FROM smscke_supplier WHERE SUPPLIER_ID=#{0}
 	</select>
 
