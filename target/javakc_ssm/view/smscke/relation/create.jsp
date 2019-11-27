@@ -9,7 +9,7 @@
 	<script>
 		$(function() {
 			//选择父类触发事件
-			$('#organizationId').click(function () {
+			$('#organizationPid').click(function () {
 				$('#organizationType').val("organizationId");
 				layer.open({
 					type: 2,
@@ -20,7 +20,7 @@
 					content: root + '/organization/createParent.do'
 				});
 			});
-			$('#receiveOrganizationId').click(function () {
+			$('#receiveOrganizationPid').click(function () {
 				$('#organizationType').val("receiveOrganizationId");
 				layer.open({
 					type: 2,
@@ -39,43 +39,43 @@
 				<div class="col-sm-4"><input type="button" value="返回上一页" class="btn btn-success" onclick="javascript:history.back();"/></div>
 			</div>
 			<div class="ibox float-e-margins">
-				<form action="${path }/menu/create.do" method="post" class="form-horizontal" role="form">
-					<input type="hidden1" id="organizationType" value="">
+				<form action="${path }/relation/save.do" method="post" class="form-horizontal" role="form">
+					<input type="hidden" id="organizationType" value="">
                     <fieldset>
 						<legend>供应商-物资新增</legend>
 
                        	<div class="form-group">
-                          	<label class="col-sm-2 control-label" for="organizationId">组织</label>
+                          	<label class="col-sm-2 control-label" for="organizationPid">组织</label>
                           	<div class="col-sm-10">
-                            	<input class="form-control" id="menupidValue1" name="pId" type="hidden1"/>
-                            	<input class="form-control" id="organizationId"  type="text" readonly placeholder="点击选择组织"/>
+                            	<input class="form-control" id="organizationId" name="organizationId" type="hidden1"/>
+                            	<input class="form-control" id="organizationPid"  type="text" readonly placeholder="点击选择组织"/>
                           	</div>
                        	</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="menupid">供应商</label>
+							<label class="col-sm-2 control-label" for="supplierId">供应商</label>
 							<div class="col-sm-10">
-								<input class="form-control" id="menupidValue2" name="menuPid" type="hidden"/>
-								<input class="form-control" id="menupid2" type="text" readonly placeholder="点击选择父类"/>
+								<input class="form-control" id="menupidValue2" name="supplierId" type="hidden"/>
+								<input class="form-control" id="supplierId" type="text" readonly placeholder="点击选择父类"/>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="menupid">物资</label>
+							<label class="col-sm-2 control-label" for="materialsId">物资</label>
 							<div class="col-sm-10">
-								<input class="form-control" id="menupidValue3" name="menuPid" type="hidden"/>
-								<input class="form-control" id="menupid" type="text" readonly placeholder="点击选择父类"/>
+								<input class="form-control" id="menupidValue3" name="materialsId" type="hidden"/>
+								<input class="form-control" id="materialsId" type="text" readonly placeholder="点击选择父类"/>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="menuname">税率</label>
+							<label class="col-sm-2 control-label" for="taxRate">税率</label>
 							<div class="col-sm-10">
-								<input class="form-control" id="menuname" name="menuName" type="text" placeholder="填写菜单名称  测试查询"/>
+								<input class="form-control" id="taxRate" name="taxRate" type="text" placeholder="填写菜单名称  测试查询"/>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="menupid">收货组织</label>
+							<label class="col-sm-2 control-label" for="receiveOrganizationPid">收货组织</label>
 							<div class="col-sm-10">
-								<input class="form-control" id="menupidValue4" name="receiveOrganizationPid" type="hidden1"/>
-								<input class="form-control" id="receiveOrganizationId" type="text" readonly placeholder="点击选择父类"/>
+								<input class="form-control" id="receiveOrganizationId" name="receiveOrganizationId" type="hidden1"/>
+								<input class="form-control" id="receiveOrganizationPid" type="text" readonly placeholder="点击选择父类"/>
 							</div>
 						</div>
 

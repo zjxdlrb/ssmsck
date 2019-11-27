@@ -70,13 +70,13 @@
 						var name = $('[name=pId]:checked').attr('value1');
 
 						if(parent.$('#organizationType').val()=="organizationId"){
-							parent.$('#organizationId').val(name);
-							parent.$('#menupidValue1').val(id);
+							parent.$('#organizationPid').val(name);
+							parent.$('#organizationId').val(id);
 							parent.layer.close(index);
 
 						}else {
-							parent.$('#receiveOrganizationId').val(name);
-							parent.$('#menupidValue4').val(id);
+							parent.$('#receiveOrganizationPid').val(name);
+							parent.$('#receiveOrganizationId').val(id);
 							parent.layer.close(index);
 						}
 
