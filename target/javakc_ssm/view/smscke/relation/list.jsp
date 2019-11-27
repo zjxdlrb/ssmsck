@@ -10,10 +10,10 @@
 		<div class="wrapper wrapper-content animated fadeInRight">
 			<div class="ibox float-e-margins">
 				<form id="searchForm" action="">
+					<input type="hidden" id="relationId" value="" name="relationId">
 				<div class="col-sm-12">
 					<!-- ------------按钮组 start------------ -->
 	                <div class="alert alert-success" role="alert">测试详细信息</div>
-
 
 					<div class="col-sm-3">
 						<label class="col-sm-3 control-label text-right" for="search1">供应商:</label>
@@ -36,12 +36,13 @@
 
 	                <div class="col-sm-3">
 	                	<div class="btn-group hidden-xs" role="group">
-                			<button type="button" class="btn btn-primary" data-toggle="modal" id="create" name="test/create.jsp">
-	                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>添加
-	                        </button>
-	                        <button type="button" class="btn btn-success" data-toggle="modal" id="update" name="test/view.do">
+                			<button type="button" class="btn btn-primary" data-toggle="modal" id="query" name="">
 	                            <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>查询
 	                        </button>
+							<button type="button" class="btn btn-success" data-toggle="modal" id="create" name="smscke/relation/create.jsp">
+								<i class="glyphicon glyphicon-plus" aria-hidden="true"></i>添加
+							</button>
+
 	                        <button type="button" class="btn btn-danger" data-toggle="modal" id="delete" name="test/delete.do">
 	                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>删除
 	                        </button>
@@ -65,18 +66,26 @@
 					                <th>物资</th>
 					                <th>税率</th>
 					                <th>收货组织</th>
+									<th>操作</th>
 					            </tr>
 					        </thead>
 					        <tbody>
 					        	<c:set var="vs"></c:set>
 					        	<c:forEach var="e" items="${page.list }" varStatus="v">
 						            <tr>
-						                <td><input type="checkbox" name="ids" value="${e.relationId }"/></td>
-						                <td>${e.organizationId }</td>
-						                <td>${e.supplierId }</td>
-						                <td>${e.materialsId }</td>
+
+						                <td><input type="checkbox" id="${e.relationId }" name="ids" value="${e.relationId }"/>
+											<input type="hidden">
+										</td>
+						                <td>${e.organizationName }</td>
+						                <td>${e.supplierName }</td>
+						                <td>${e.materialsName }</td>
 										<td>${e.taxRate }</td>
-										<td>${e.receiveOrganizationId }</td>
+										<td>${e.receiveOrganizationName }</td>
+										<td>
+
+											<a href="javascript:update('${e.relationId}' );" >编辑</a>
+										</td>
 						            </tr>
 					            </c:forEach>
 					        </tbody>
@@ -88,4 +97,17 @@
 			</div>
 		</div>
 	</body>
+<script language="JavaScript">
+
+	
+	function update(id) {
+
+		$("#relationId").val(id)
+		var url = root+"relation/view.do";
+		$("#searchForm").attr('action', url).submit();
+	}
+
+
+
+</script>
 </html>
