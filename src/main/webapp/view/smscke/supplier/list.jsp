@@ -12,10 +12,10 @@
         <form id="searchForm" action="">
             <div class="col-sm-12">
                 <!-- ------------按钮组 start------------ -->
-                <div class="alert alert-success" role="alert">详细信息</div>
+                <div class="alert alert-success" role="alert">供应商列表</div>
                 <div class="col-sm-8">
                     <div class="btn-group hidden-xs" role="group">
-                        <button type="button" class="btn btn-success" data-toggle="modal" id="create" name="smscke/supplier/create.jsp">
+                        <button type="button" class="btn btn-success" data-toggle="modal" id="create" name="smscke/supplier/create1.jsp">
                             <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>新增
                         </button>
                         <%--							<button type="button" class="btn btn-success" data-toggle="modal" id="update" name="smsckeunit/view.do">--%>
@@ -48,16 +48,16 @@
                         <tr>
                             <td>${e.supplierCoding }</td>
                             <td>${e.supplierName }</td>
-                            <td>${e.supplierType }</td>
+                            <td>${e.supplierType == 0?"外部供应商":"内部供应商" }</td>
                             <td>${e.supplierLinkman }</td>
                             <td>${e.supplierPhone }</td>
-                            <td>${e.supplierContract }</td>
-                            <td>${e.supplierShop}</td>
-                            <td ><button type="button" class="btn btn-success" data-toggle="modal" id="update" name="supplier/supUpdate.do">
+                            <td>${e.supplierContract == 0?"":"√" }</td>
+                            <td>${e.supplierShop == 0?"":"√" }</td>
+                            <td ><button type="button" class="btn btn-success" data-toggle="modal" id="update" name="supplier/update.do" ${e.supplierShop == 1?"disabled":""}>
                                 <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>编辑</button>
                             </td>
-                            <td>${e.supplierUse == 0?"未启用":"已启用"}</td>
-                            <td ><button type="button" class="btn btn-success" data-toggle="modal" id="usermanager" name="supplier/supUpdate.do">
+                            <td>${e.supplierUse == 0?"已禁用":"已启用" }</td>
+                            <td ><button type="button" class="btn btn-success" data-toggle="modal" id="usermanager" name="" ${e.supplierShop == 0?"disabled":""} >
                                 <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>账号管理</button>
                             </td>
                         </tr>
