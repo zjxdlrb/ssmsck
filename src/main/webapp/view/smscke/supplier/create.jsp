@@ -110,12 +110,15 @@
                     <div class="row">
                         <label class="col-sm-1 control-label" for="ds_host">启用门户</label>
                         <div class="col-sm-3">
-                            <input type="checkbox" name="supplierShop" value="1">
+                            <input type="checkbox" name="supplierShop" onclick="javascript:document.getElementById('supplierShop').value=1">
+                            <input name="supplierShop" type="hidden" value="0" id="supplierShop">
                         </div>
 
                         <label class="col-sm-1 control-label" for="ds_host">必须合同</label>
                         <div class="col-sm-3">
-                            <input type="checkbox" name="supplierContract" value="1">
+                            <input type="checkbox" name="supplierContract" onclick="javascript:document.getElementById('supplierContract').value=1">
+                            <input name="supplierContract" type="hidden" value="0" id="supplierContract">
+
                         </div>
                    </div>
 
@@ -129,6 +132,7 @@
                     <div class="col-sm-5">
                         <input type="submit" value="提交" class="btn btn-success"/>
                     </div>
+                </div>
             </fieldset>
         </form>
     </div>

@@ -26,7 +26,7 @@ public class SupplierController {
 
     @RequestMapping("/querySupList")
     @ResponseBody
-    public ModelAndView queryUnit(SupplierEntity supplierEntity, HttpServletRequest request, HttpServletResponse response){
+    public ModelAndView querySupList(SupplierEntity supplierEntity, HttpServletRequest request, HttpServletResponse response){
         ModelAndView modelAndView=new ModelAndView("smscke/supplier/list");
         Page<SupplierEntity> page=supplierService.querySupList(supplierEntity,new Page<SupplierEntity>(request,response));
         modelAndView.addObject("page",page);
@@ -35,6 +35,7 @@ public class SupplierController {
 
     @RequestMapping("/save")
     public String save(SupplierEntity supplierEntity) {
+
         // 设置ID
         supplierEntity.setSupplierId(CommonUtil.uuid());
         Random random = new Random();
@@ -53,13 +54,23 @@ public class SupplierController {
 
     @RequestMapping("/view")
     public String view(String ids, ModelMap modelMap){
+        System.out.println(ids);
         SupplierEntity supplierEntity=supplierService.get(ids);
         modelMap.put("supplierEntity",supplierEntity);
-        return "supplier/update";
+        return "smscke/supplier/update";
+    }
+
+    @RequestMapping("/View")
+    public String View(String ids, ModelMap modelMap){
+        System.out.println(ids);
+        SupplierEntity supplierEntity=supplierService.get(ids);
+        modelMap.put("supplierEntity",supplierEntity);
+        return "smscke/supplier/show";
     }
 
     @RequestMapping("/update")
     public String update(SupplierEntity supplierEntity){
+        supplierEntity.setSupplierClassify(null);
         supplierService.update(supplierEntity);
         return "redirect:querySupList.do";
     }

@@ -110,12 +110,12 @@
                     <div class="row">
                         <label class="col-sm-1 control-label" for="ds_host">启用门户</label>
                         <div class="col-sm-3">
-                            <input type="checkbox" name="supplierShop" value="1" >
+                            <input type="checkbox" id="supplierShop" value="0" name="supplierShop" onclick="javascript:document.getElementById('supplierShop').value=1">
                         </div>
 
                         <label class="col-sm-1 control-label" for="ds_host">必须合同</label>
                         <div class="col-sm-3">
-                            <input type="checkbox" name="supplierContract" value="1">
+                            <input type="checkbox" name="supplierContract" id="supplierContract" value="0"  onclick="javascript:document.getElementById('supplierContract').value=1">
                         </div>
                    </div>
 
