@@ -43,6 +43,12 @@ public class SupplierController {
             result+=random.nextInt(10);
         }
         System.out.println(result);
+        if(supplierEntity.getSupplierContract()==null){
+            supplierEntity.setSupplierContract("0");
+        }
+        if(supplierEntity.getSupplierShop()==null){
+            supplierEntity.setSupplierShop("0");
+        }
         supplierEntity.setSupplierCoding(result);
         supplierEntity.setSupplierClassify(null);
         supplierService.save(supplierEntity);
