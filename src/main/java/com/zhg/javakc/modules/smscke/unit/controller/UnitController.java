@@ -34,10 +34,9 @@ public class UnitController {
         return "redirect:queryUnit.do";
 
     }
-
     @RequestMapping("/view")
-    public String view(String ids, ModelMap modelMap){
-        UnitEntity unitEntity=unitService.get(ids);
+    public String view(String unitId, ModelMap modelMap){
+        UnitEntity unitEntity=unitService.get(unitId);
         modelMap.put("unitEntity",unitEntity);
         return "smscke/unit/update";
     }
@@ -45,5 +44,11 @@ public class UnitController {
     public String update(UnitEntity unitEntity){
             unitService.update(unitEntity);
             return "redirect:queryUnit.do";
+    }
+    @RequestMapping("/delete")
+    public String delete(String[] ids)
+    {
+        unitService.delete(ids);
+        return "redirect:queryUnit.do";
     }
 }

@@ -3,9 +3,13 @@ package com.zhg.javakc.modules.smscke.unit.entity;
 import com.zhg.javakc.base.entity.BaseEntity;
 
 public class UnitEntity extends BaseEntity<UnitEntity> {
+    //主键ID
     private String unitId;
+    //单位编码
     private String unitCoding;
+    //单位代码
     private String unitCode;
+    //单位名称
     private String unitName;
 
     public String getUnitId() {
