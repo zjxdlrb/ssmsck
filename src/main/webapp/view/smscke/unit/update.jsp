@@ -20,11 +20,11 @@
                        <div class="form-group">
                           <label class="col-sm-1 control-label" for="ds_host">单位代码</label>
                           <div class="col-sm-5">
-                             <input class="form-control" type="text" name="unitCode" value="${unitEntity.unitCode}"/>
+                             <input class="form-control" type="text" id="unitCode" name="unitCode" value="${unitEntity.unitCode}"/>
                           </div>
                           <label class="col-sm-1 control-label" for="ds_name">单位名称</label>
                           <div class="col-sm-5">
-							  <input class="form-control" type="text" name="unitName" value="${unitEntity.unitName}"/>
+							  <input class="form-control" type="text" id="unitName" name="unitName" value="${unitEntity.unitName}"/>
                           </div>
                     </fieldset>     
 

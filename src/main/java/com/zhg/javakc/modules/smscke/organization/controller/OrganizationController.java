@@ -5,6 +5,7 @@ import com.zhg.javakc.modules.smscke.organization.entity.OrganizationEntity;
 import com.zhg.javakc.modules.smscke.organization.service.OrganizationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -29,6 +30,13 @@ public class OrganizationController {
         organizationEntity.setOrganizationId(CommonUtil.uuid());
         organizationService.save(organizationEntity);
         return "redirect:/view/smscke/public/orgredio/list.jsp";
+    }
+
+    @RequestMapping(value="/createParent")
+    public String createParent(OrganizationEntity entity, ModelMap model) throws Exception
+    {
+        model.put("page", organizationService.findList(entity));
+        return "smscke/public/organization/organization";
     }
 
 

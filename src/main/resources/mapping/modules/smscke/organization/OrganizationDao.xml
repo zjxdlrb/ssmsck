@@ -20,5 +20,16 @@
 
 	</insert>
 
+	<select id="findList" resultType="java.util.HashMap">
+
+		SELECT
+		ORGANIZATION_ID "id",
+		ORGANIZATION_NAME "name",
+		ORGANIZATION_PID "pId",
+		ORGANIZATION_LEVEL "orglevel"
+		FROM SMSCKE_ORGANIZATION WHERE 1=1 ORDER BY ORGANIZATION_ORDER ASC
+
+	</select>
+
 	
 </mapper>

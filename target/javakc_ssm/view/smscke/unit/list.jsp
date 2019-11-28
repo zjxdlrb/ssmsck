@@ -10,6 +10,7 @@
 		<div class="wrapper wrapper-content animated fadeInRight">
 			<div class="ibox float-e-margins">
 				<form id="searchForm" action="">
+					<input type="hidden" id="unitId" value="" name="unitId">
 				<div class="col-sm-12">
 					<!-- ------------按钮组 start------------ -->
 	                <div class="alert alert-success" role="alert">详细信息</div>
@@ -21,6 +22,9 @@
 <%--							<button type="button" class="btn btn-success" data-toggle="modal" id="update" name="smsckeunit/view.do">--%>
 <%--								<i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>修改--%>
 <%--							</button>--%>
+							<button type="button" class="btn btn-danger" data-toggle="modal" id="delete" name="smsckeunit/delete.do">
+								<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>删除
+							</button>
 		                 </div>
 	                </div>
 
@@ -40,11 +44,14 @@
 					        	<c:set var="vs"></c:set>
 					        	<c:forEach var="e" items="${page.list }" varStatus="v">
 						            <tr>
-						                <td><input type="checkbox" name="ids" value="${e.unitId }"/></td>
+						                <td><input type="checkbox" name="ids" id="${e.unitId }" value="${e.unitId }"/>
+											<input type="hidden"></td>
 										<td>${e.unitCode }</td>
 						                <td>${e.unitName }</td>
-										<td ><button type="button" class="btn btn-success" data-toggle="modal" id="update" name="smsckeunit/view.do">
-                                            <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>编辑</button>
+										<td >
+<%--											<button type="button" class="btn btn-success" data-toggle="modal" id="update" name="smsckeunit/view.do">--%>
+<%--                                            <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>编辑</button>--%>
+											<a href="JavaScript:update('${e.unitId}');">编辑</a>
 										</td>
 						            </tr>
 					            </c:forEach>
@@ -57,5 +64,14 @@
 			     </form>
 			</div>
 		</div>
+		<script language="JavaScript">
+			function update(id) {
+
+				$("#unitId").val(id)
+				var url=root+"smsckeunit/view.do";
+				$("#searchForm").attr('action', url).submit();
+
+			}
+		</script>
 	</body>
 </html>

@@ -6,46 +6,64 @@
 		<%@ include file="../../../common/jsp/header.jsp"%>
 		<link href="${path }/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
 	</head>
+	<script >
+		$(function() {
+			//选择父类触发事件
+			$('#menupid').click(function () {
+				layer.open({
+					type: 2,
+					title: '选择菜单父类',
+					shadeClose: true,
+					shade: 0.8,
+					area: ['65%', '65%'],
+					content: root + '/menu/createParent.do'
+				});
+			});
+		});
+	</script>
 	<body>
 		<div class="wrapper wrapper-content animated fadeInRight">
-<%--			<div>--%>
-<%--				<div class="col-sm-4"><input type="button" value="返回" class="btn btn-success" onclick="javascript:history.back();"/></div>--%>
-<%--			</div>--%>
+
 			<div class="ibox float-e-margins">
 				<form action="${path }/unitc/save.do" method="post" class="form-horizontal" role="form">
 					<fieldset>
 						<legend>测试基本信息</legend>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="ds_host">物资编码</label>
-							<div class="col-sm-4">
-								<input class="form-control" type="text" name="materialsCoding"/>
-							</div>
+								<div class="col-sm-4">
+									<input class="form-control" id="menulevel" name="menuLevel" readonly type="text" placeholder="自动填充物资编码"/>
+								</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="ds_name">物资姓名</label>
-							<div class="col-sm-4">
-								<input class="form-control" id="search" name="materialsName" value="" type="button" placeholder="请点击选择"/>
+								<label class="col-sm-2 control-label" for="menupid">物资姓名</label>
+								<div class="col-sm-4">
+									<input class="form-control" id="menupidValue" name="menuPid" type="hidden"/>
+									<input class="form-control" id="menupid" type="text" readonly placeholder="请选择"/>
+								</div>
 							</div>
-						</div>
+
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="ds_username">规格</label>
 							<div class="col-sm-4">
-								<input class="form-control" type="text"  name="materialsSpecification"/>
+								<input class="form-control" type="text"  name="materialsSpecification"  readonly type="text" placeholder="自动填充规格"/>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="ds_host">基本单位</label>
 							<div class="col-sm-4">
-								<input class="form-control" type="text" name="materialsUnit"/>
+								<input class="form-control" type="text" name="materialsUnit" readonly type="text" placeholder="自动填充基本单位"/>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="ds_host">物资转换前单位</label>
 							<div class="col-sm-4">
 								<select class="form-control m-b" name="materialsUnitbefore" data-placeholder="请选择">
-									<option>${materialsUnitbefore}</option>
+									<option value="0" selected>请选择
+									<option value="1">Kg(千克)
+									<option value="2">g(克)
+									<option value="3">t(吨)
+									<option value="4">D(袋)
 								</select>
-<%--								<input class="form-control" type="text" name="materialsUnitbefore"/>--%>
 							</div>
 						</div>
 						<div class="form-group">
@@ -58,9 +76,12 @@
 							<label class="col-sm-2 control-label" for="ds_host">物资转换后单位</label>
 							<div class="col-sm-4">
 								<select class="form-control m-b" name="materialsUnitafter" data-placeholder="请选择">
-									<option>${materialsUnitafter}</option>
+									<option value="0" selected>请选择
+									<option value="1">Kg(千克)
+									<option value="2">g(克)
+									<option value="3">t(吨)
+									<option value="4">D(袋)
 								</select>
-<%--								<input class="form-control" type="text" name="materialsUnitafter"/>--%>
 							</div>
 						</div>
 					</fieldset>

@@ -16,11 +16,6 @@ public class UnitcService extends BaseService<UnitcDao, UnitcEntity> {
     @Autowired
     public UnitcDao unitcDao;
 
-    public List<Map<String, Object>> findList()
-    {
-        return unitcDao.findAll();
-    }
-
     public Page<UnitcEntity> queryUnitc(UnitcEntity unitcEntity, Page<UnitcEntity> page){
         // 设置分页参数，才会被Mybatis分页插件所识别，拦截SQL，再其SQL的前后加入分页SQL语句
         unitcEntity.setPage(page);

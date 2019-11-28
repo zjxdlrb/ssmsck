@@ -32,8 +32,8 @@ public class UnitcController {
         return "redirect:queryUnitc.do";
     }
     @RequestMapping("/view")
-    public String view(String ids, ModelMap modelMap){
-        UnitcEntity unitcEntity= unitcService.get(ids);
+    public String view(String unitConversionid, ModelMap modelMap){
+        UnitcEntity unitcEntity= unitcService.get(unitConversionid);
         modelMap.put("unitcEntity",unitcEntity);
         return "smscke/unitc/update";
     }

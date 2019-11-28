@@ -15,6 +15,8 @@ import com.zhg.javakc.base.entity.BaseEntity;
         private String supplierType;
         //供应商名称
         private String supplierName;
+        //供应商分类
+        private String supplierClassify;
         //供应商简称
         private String supplierShortened;
         //缩写
@@ -190,8 +192,13 @@ import com.zhg.javakc.base.entity.BaseEntity;
         }
 
 
+        public String getSupplierClassify() {
+            return supplierClassify;
+        }
 
-
+        public void setSupplierClassify(String supplierClassify) {
+            this.supplierClassify = supplierClassify;
+        }
 
 
     }
