@@ -2,17 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhg.javakc.modules.smscke.supplier.dao.SupplierDao">
 
-    <select id="querySupList" resultType="java.util.HashMap">
+    <select id="findList" resultType="com.zhg.javakc.modules.smscke.supplier.entity.SupplierEntity">
 
 		SELECT
-		supplier_id "supid",
-		supplier_coding "supcode",
-		supplier_name "supname",
-		supplier_type "suptype",
-		supplier_linkman "suplinkman",
-		supplier_phone "supphone",
-		supplier_contract "supcontract",
-		supplier_shop "supshop"
+		supplier_id as supplierId,
+		supplier_coding as supplierCoding,
+		supplier_name as supplierName,
+		supplier_type as supplierType,
+		supplier_linkman as supplierLinkman,
+		supplier_phone as supplierPhone,
+		supplier_contract as supplierContract,
+		supplier_shop as supplierShop,
+		supplier_use as supplierUse
 
         FROM smscke_supplier WHERE 1=1 ORDER BY supplier_coding ASC
 

@@ -34,7 +34,6 @@ public class UnitController {
         return "redirect:queryUnit.do";
 
     }
-
     @RequestMapping("/view")
     public String view(String ids, ModelMap modelMap){
         UnitEntity unitEntity=unitService.get(ids);

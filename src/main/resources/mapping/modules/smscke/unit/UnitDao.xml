@@ -9,7 +9,9 @@
             AND UNIT_NAME LIKE '%'||#{unitName}||'%'
         </if>
     </select>
+<select id="findAll" resultType="com.zhg.javakc.modules.smscke.unit.entity.UnitEntity">
 
+</select>
     <insert id="insert">
 		INSERT INTO SMSCKE_UNIT (UNIT_ID,UNIT_CODING,UNIT_CODE,UNIT_NAME) VALUES (#{unitId},#{unitCoding},#{unitCode},#{unitName})
 	</insert>

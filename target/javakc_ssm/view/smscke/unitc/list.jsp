@@ -13,17 +13,31 @@
 				<div class="col-sm-12">
 					<!-- ------------按钮组 start------------ -->
 	                <div class="alert alert-success" role="alert">详细信息</div>
-	                <div class="col-sm-8">
-	                	<div class="btn-group hidden-xs" role="group">
-                			<button type="button" class="btn btn-success" data-toggle="modal" id="create" name="smscke/unitc/create.jsp">
-	                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>新增
-	                        </button>
-<%--							<button type="button" class="btn btn-success" data-toggle="modal" id="update" name="smsckeunit/view.do">--%>
-<%--								<i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>修改--%>
-<%--							</button>--%>
-		                 </div>
-	                </div>
+					<div class="form-group">
 
+					<div class="col-sm-6">
+						<label class="col-sm-2 control-label" for="classifypid">物资</label>
+					<div class="input-group">
+						<input class="form-control" id="classifypidValue" name="classifyPid" type="hidden">
+						<input class="form-control" id="classifypid" type="text" placeholder="请点击选择"/>
+					</div>
+					</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="btn-group hidden-xs" role="group">
+							<button type="button" class="btn btn-success" data-toggle="modal" id="create" name="smscke/unitc/create.jsp">
+								<i class="glyphicon glyphicon-plus" aria-hidden="true"></i>新增
+							</button>
+							<button type="button" class="btn btn-warning" data-toggle="modal" id="search" name="unitc/view.do">
+								<i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>查询
+							</button>
+							<button type="button" class="btn btn-danger" data-toggle="modal" id="delete" name="unitc/delete.do">
+								<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>删除
+							</button>
+						</div>
+						</div>
+
+            </div>
 	                 <!-- ------------按钮组 end------------ -->
 						<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
 						<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
@@ -61,7 +75,6 @@
 					<div class="col-sm-8">
 				    <div class="page">${page}</div>
 					</div>
-			     </div>
 			     </form>
 			</div>
 		</div>

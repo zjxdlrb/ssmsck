@@ -1,5 +1,6 @@
 package com.zhg.javakc.modules.smscke.unitc.service;
 
+import com.oracle.xmlns.internal.webservices.jaxws_databinding.XmlWebServiceClient;
 import com.zhg.javakc.base.page.Page;
 import com.zhg.javakc.base.service.BaseService;
 import com.zhg.javakc.modules.smscke.unitc.dao.UnitcDao;
@@ -8,11 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class UnitcService extends BaseService<UnitcDao, UnitcEntity> {
     @Autowired
     public UnitcDao unitcDao;
+
+    public List<Map<String, Object>> findList()
+    {
+        return unitcDao.findAll();
+    }
 
     public Page<UnitcEntity> queryUnitc(UnitcEntity unitcEntity, Page<UnitcEntity> page){
         // 设置分页参数，才会被Mybatis分页插件所识别，拦截SQL，再其SQL的前后加入分页SQL语句
@@ -23,4 +30,7 @@ public class UnitcService extends BaseService<UnitcDao, UnitcEntity> {
         page.setList(unitcList);
         return page;
     }
+
+
+
 }
