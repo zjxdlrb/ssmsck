@@ -25,6 +25,7 @@ public class RelationController {
         ModelAndView modelAndView=new ModelAndView("smscke/relation/list");
         Page<RelationEntity> page=relationService.queryAll(relationEntity,new Page<RelationEntity>(request,response));
         modelAndView.addObject("page",page);
+        modelAndView.addObject("relationEntity",relationEntity);
         return modelAndView;
     }
 
@@ -45,6 +46,12 @@ public class RelationController {
     @RequestMapping("/update")
     public String update(RelationEntity relationEntity){
         relationService.update(relationEntity);
+        return "redirect:queryAll.do";
+    }
+
+    @RequestMapping("/delete")
+    public String delete(RelationEntity relationEntity){
+        relationService.delete(relationEntity);
         return "redirect:queryAll.do";
     }
 

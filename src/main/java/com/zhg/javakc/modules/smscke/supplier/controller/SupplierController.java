@@ -13,8 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 
@@ -76,7 +74,7 @@ public class SupplierController {
     }
 
     @RequestMapping("/createParent")
-    @ResponseBody
+//    @ResponseBody
     public String createParent(SupplierEntity Entity, ModelMap model){
         model.put("page",supplierService.findList(Entity));
         return "smscke/public/supplier/supplier";
