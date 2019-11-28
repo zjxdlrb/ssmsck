@@ -32,6 +32,26 @@
 					content: root + '/organization/createParent.do'
 				});
 			});
+            $('#supplier').click(function () {
+                layer.open({
+                    type: 2,
+                    title: '选择菜单父类',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['65%', '65%'],
+                    content: root + '/supplier/createParent.do'
+                });
+            });
+            $('#materials').click(function () {
+                layer.open({
+                    type: 2,
+                    title: '选择菜单父类',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['65%', '65%'],
+                    content: root + '/materials/createParent.do'
+                });
+            });
 		})
 	</script>
 	<body>
@@ -55,28 +75,28 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="supplierId">供应商</label>
 							<div class="col-sm-10">
-								<input class="form-control" id="menupidValue2" name="supplierId" type="hidden" value=""/>
-								<input class="form-control" id="supplierId" value="" type="text" readonly placeholder="点击选择父类"/>
+								<input class="form-control" id="supplierId" name="supplierId" type="hidden1" value="${relationEntity.supplierId}"/>
+								<input class="form-control" id="supplier" value="${relationEntity.supplierName}" type="text" readonly placeholder="点击选择供应商"/>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="materialsId">物资</label>
 							<div class="col-sm-10">
-								<input class="form-control" id="menupidValue3" name="materialsId" type="hidden" value=""/>
-								<input class="form-control" id="materialsId" value="" type="text" readonly placeholder="点击选择父类"/>
+								<input class="form-control" id="materialsId" name="materialsId" type="hidden1" value="${relationEntity.materialsId}"/>
+								<input class="form-control" id="materials" value="${relationEntity.materialsName}" type="text" readonly placeholder="点击选择物资"/>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="taxRate">税率</label>
 							<div class="col-sm-10">
-								<input class="form-control" id="taxRate" name="taxRate" value="" type="text" placeholder="填写菜单名称  测试查询"/>
+								<input class="form-control" id="taxRate" name="taxRate" value="${relationEntity.taxRate}" type="text" placeholder="请填写税率"/>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="receiveOrganizationPid">收货组织</label>
 							<div class="col-sm-10">
 								<input class="form-control" id="receiveOrganizationId" name="receiveOrganizationId" type="hidden1" value="${relationEntity.receiveOrganizationId}"/>
-								<input class="form-control" id="receiveOrganizationPid" value="${relationEntity.receiveOrganizationName}" type="text" readonly placeholder="点击选择父类"/>
+								<input class="form-control" id="receiveOrganizationPid" value="${relationEntity.receiveOrganizationName}" type="text" readonly placeholder="点击选择收货组织"/>
 							</div>
 						</div>
 
