@@ -28,6 +28,7 @@ public class SupplierController {
         ModelAndView modelAndView=new ModelAndView("smscke/supplier/list");
         Page<SupplierEntity> page=supplierService.querySupList(supplierEntity,new Page<SupplierEntity>(request,response));
         modelAndView.addObject("page",page);
+        modelAndView.addObject("supplierEntity",supplierEntity);
         return modelAndView;
     }
 
@@ -57,17 +58,17 @@ public class SupplierController {
     }
 
     @RequestMapping("/view")
-    public String view(String ids, ModelMap modelMap){
-        System.out.println(ids);
-        SupplierEntity supplierEntity=supplierService.get(ids);
+    public String view(String supplierId, ModelMap modelMap){
+        System.out.println(supplierId);
+        SupplierEntity supplierEntity=supplierService.get(supplierId);
         modelMap.put("supplierEntity",supplierEntity);
         return "smscke/supplier/update";
     }
 
     @RequestMapping("/View")
-    public String View(String ids, ModelMap modelMap){
-        System.out.println(ids);
-        SupplierEntity supplierEntity=supplierService.get(ids);
+    public String View(String supplierId, ModelMap modelMap){
+        System.out.println(supplierId);
+        SupplierEntity supplierEntity=supplierService.get(supplierId);
         modelMap.put("supplierEntity",supplierEntity);
         return "smscke/supplier/show";
     }
