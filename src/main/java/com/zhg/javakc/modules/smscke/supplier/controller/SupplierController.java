@@ -76,9 +76,22 @@ public class SupplierController {
     @RequestMapping("/update")
     public String update(SupplierEntity supplierEntity){
         supplierEntity.setSupplierClassify(null);
+        if(supplierEntity.getSupplierContract()==null){
+            supplierEntity.setSupplierContract("0");
+        }
+        if(supplierEntity.getSupplierShop()==null){
+            supplierEntity.setSupplierShop("0");
+        }
         supplierService.update(supplierEntity);
         return "redirect:querySupList.do";
     }
+
+//    @RequestMapping("/delete")
+//    public String delete(String[] ids){
+//        supplierService.delete(ids);
+//        return "redirect:querySupList.do";
+//    }
+
 
     @RequestMapping("/createParent")
 //    @ResponseBody

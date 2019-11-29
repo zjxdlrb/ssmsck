@@ -25,9 +25,9 @@
 <%--                        <button type="button" class="btn btn-success" data-toggle="modal" id="update" name="supplier/view.do">--%>
 <%--                            <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>修改--%>
 <%--                        </button>--%>
-<%--                        <button type="button" class="btn btn-success" data-toggle="modal" id="delete" name="supplier/View.do">--%>
-<%--                            <i class="glyphicon glyphicon-book" aria-hidden="true"></i>查看--%>
-<%--                        </button>--%>
+<%--                        <button type="button" class="btn btn-success" data-toggle="modal" id="delete" name="supplier/delete.do">--%>
+<%--                            <i class="glyphicon glyphicon-book" aria-hidden="true"></i>删除--%>
+                        </button>
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -61,8 +61,8 @@
                     <c:set var="vs"></c:set>
                     <c:forEach var="e" items="${page.list}" varStatus="v">
                         <tr>
-                            <td><input type="checkbox" name="ids" id="${e.supplierId }" value="${e.supplierName }" ${e.supplierShop == 0?"disabled":""}/>
-                                <input type="hidden" name="${e.supplierId }">
+                            <td><input type="checkbox" name="ids" id="${e.supplierId }" value="${e.supplierId }"/>
+                                <input type="hidden">
                             </td>
                             <td>${e.supplierCoding }</td>
                             <td>${e.supplierName }</td>
@@ -75,7 +75,7 @@
                             <td>
                                 <a href="javascript:update('${e.supplierId}' );" >编辑</a>
                                 <a href="javascript:update('${e.supplierId}' );" >查看详细信息</a>
-                                <a href="javascript:todelete('${e.supplierId}');" >删除</a>
+<%--                                <a href="javascript:todelete('${e.supplierId}');" >删除</a>--%>
                             </td>
                             <td><input type="checkbox" name="menustate" ${e.supplierUse==0?"checked":"" } disabled
                                        data-on-text="启用" data-off-text="禁用"
@@ -114,15 +114,15 @@
         $("#searchForm").attr('action', url).submit();
     }
 
-    function todelete(id) {
-        $("#supplierId").val(id)
-        var url = root + "supplier/delete.do";
-        //
-        $("input[id='"+id+"']").prop("checked",true)
-
-        $.isconfirm(url);
-
-    }
+    // function todelete(id) {
+    //     $("#supplierId").val(id)
+    //     var url = root + "supplier/delete.do";
+    //     //
+    //     $("input[id='"+id+"']").prop("checked",true)
+    //
+    //     $.isconfirm(url);
+    //
+    // }
 
     $(function() {
         //选择父类触发事件
