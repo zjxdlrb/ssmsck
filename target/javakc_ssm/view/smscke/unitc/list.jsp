@@ -88,8 +88,6 @@
                             <td>${e.conversionRate}</td>
                             <td>${e.materialsUnitafter}</td>
                             <td>
-                                    <%--											<button type="button" class="btn btn-success" data-toggle="modal" id="update" name="unitc/view.do">--%>
-                                    <%--                                            <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>编辑</button>--%>
                                 <a href="JavaScript:update('${e.unitConversionid}');">编辑</a>
                             </td>
                         </tr>

@@ -16,7 +16,11 @@
 		supplier_use as supplierUse,
 		supplier_abbreviation as supplierAbbreviation
 
-        FROM smscke_supplier WHERE 1=1 ORDER BY supplier_coding ASC
+        FROM smscke_supplier WHERE 1=1
+		<if test="supplierName!='' and supplierName!=null">
+		AND SUPPLIER_NAME LIKE '%'||#{supplierName}||'%'
+		</if>
+        ORDER BY supplier_coding ASC
 
 	</select>
 
