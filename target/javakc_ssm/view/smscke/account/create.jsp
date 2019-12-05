@@ -22,7 +22,12 @@
                           </div>
 						   <label class="col-sm-2 control-label" for="ds_host">类型</label>
 						   <div class="col-sm-2">
-							   <input class="form-control" type="text" name="type"/>
+<%--							   <input class="form-control" type="text" name="type"/>--%>
+								<select id="type" name="type">
+										<option>---请选择---</option>
+										<option value="e76f28cbf31a499987fb34f564a25784">普通用户</option>
+										<option value="e76f28cbf31a499987fb34f564a25785">管理员</option>
+								</select>
 						   </div>
 						   <label class="col-sm-2 control-label" for="ds_host">用户名</label>
 						   <div class="col-sm-2">

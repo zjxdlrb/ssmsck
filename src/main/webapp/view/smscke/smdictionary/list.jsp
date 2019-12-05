@@ -12,7 +12,7 @@
 				<form id="searchForm" action="">
 				<div class="col-sm-12">
 					<!-- ------------按钮组 start------------ -->
-	                <div class="alert alert-success" role="alert">数据字典详细信息</div>
+	                <div class="alert alert-success" role="alert"><h2>数据字典详细信息</h2></div>
 	                <div class="col-sm-8">
 	                	<div class="btn-group hidden-xs" role="group">
                 			<button type="button" class="btn btn-primary" data-toggle="modal" id="create" name="smscke/smdictionary/create.jsp">
@@ -27,7 +27,7 @@
 		                 </div>
 	                </div>
 	                <div class="col-sm-4">
-	                	<input class="form-control" id="search" name="dicval" value="${smDicEntity.dicval}" type="text" placeholder="查询内容 回车搜索"/>
+	                	<input class="form-control" id="search" name="dictype" value="${smDicEntity.dictype}" type="text" placeholder="输入查询字典类型 回车搜索"/>
 	                </div>
 	                 <!-- ------------按钮组 end------------ -->
 						<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>

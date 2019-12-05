@@ -13,6 +13,14 @@
 				<form id="searchForm" action="">
 					<!-- ------------按钮组 start------------ -->
 	                <div class="alert alert-success" role="alert"><h1>供应商：</h1></div>
+
+                    <button type="button" class="btn btn-success" data-toggle="modal" id="update" name="account/view.do">
+                        <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>修改
+                    </button>
+                    <button type="button" class="btn btn-success" data-toggle="modal" id="change">
+                        <i class="glyphicon glyphicon-magnet" aria-hidden="true"></i>重置密码
+                    </button>
+
 	                 <!-- ------------按钮组 end------------ -->
 						<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
 						<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
@@ -25,7 +33,7 @@
 					                <th>用户名</th>
 									<th>电话</th>
 									<th>邮箱</th>
-									<th>操作(ps:选中为已启用;未选中为已关闭)</th>
+									<th>状态(选中为启用;未选中为关闭)</th>
 					            </tr>
 					        </thead>
 					        <tbody>
@@ -33,21 +41,13 @@
 					        	<c:forEach var="e" items="${page.list}" varStatus="v">
 						            <tr>
 						                <td width="50px"><input type="checkbox" name="ids" value="${e.id}"/></td>
-										<td width="150px">${e.account}</td>
-						                <td width="150px">${e.type}</td>
-										<td width="150px">${e.username}</td>
-										<td width="180px">${e.phone}</td>
-										<td width="180px">${e.email}</td>
+										<td width="200px">${e.account}</td>
+						                <td width="200px">${e.dicval}</td>
+										<td width="200px">${e.username}</td>
+										<td width="200px">${e.phone}</td>
+										<td width="200px">${e.email}</td>
 										<td>
-												<button type="button" class="btn btn-success" data-toggle="modal" id="update" name="smdic/view.do">
-													<i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>修改
-												</button>
-													&nbsp&nbsp&nbsp&nbsp
-												<input type="checkbox" name="state" ${e.state==0?"checked":"" } disabled data-on-text="已启用" data-off-text="已关闭" data-on="primary" data-off="danger"/>
-													&nbsp&nbsp&nbsp&nbsp
-												<button type="button" class="btn btn-success" data-toggle="modal" id="again">
-													<i class="glyphicon glyphicon-magnet" aria-hidden="true"></i>重置密码
-												</button>
+												<input type="checkbox" name="state" ${e.state!=0?"checked":"" } disabled data-on-text="已启用" data-off-text="已关闭" data-on="primary" data-off="danger"/>
 										</td>
 						            </tr>
 					            </c:forEach>
@@ -76,5 +76,15 @@
 		</div>
 	</body>
 	<script type="text/javascript" src="${path }/static/js/plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
-	<script type="text/javascript" src="${path }/view/system/menu/js/menu-create.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#change').click(function(){
+                if(confirm("请先确认是否选中信息?")){
+                    if(confirm("请确认是否重置密码，将新密码发送至13091096393手机上?")) {
+                        alert("新密码已发送至13091096393！")
+                    }
+                }
+            })
+        })
+    </script>
 </html>

@@ -8,4 +8,5 @@ import com.zhg.javakc.modules.smscke.account.entity.AccountEntity;
 public interface AccountDao extends BaseDao<AccountEntity> {
 
 
+
 }

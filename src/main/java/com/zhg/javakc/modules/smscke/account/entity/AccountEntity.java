@@ -1,6 +1,9 @@
 package com.zhg.javakc.modules.smscke.account.entity;
 
 import com.zhg.javakc.base.entity.BaseEntity;
+import com.zhg.javakc.modules.smscke.smdictionary.entity.SMDicEntity;
+
+import java.util.List;
 
 public class AccountEntity extends BaseEntity<AccountEntity> {
 
@@ -22,6 +25,7 @@ public class AccountEntity extends BaseEntity<AccountEntity> {
     private String state;
     //供应商外键ID
     private String supplierid;
+
 
     public String getId() {
         return id;
@@ -94,4 +98,31 @@ public class AccountEntity extends BaseEntity<AccountEntity> {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    //字典表value值
+    private String dicval;
+
+    //封装dictionary
+    private List<String> dic;
+
+
+    public List<String> getDic() {
+        return dic;
+    }
+
+    public void setDic(List<String> dic) {
+        this.dic = dic;
+    }
+
+    public String getDicval() {
+        return dicval;
+    }
+
+    public void setDicval(String dicval) {
+        this.dicval = dicval;
+    }
+
+
+
+
 }
