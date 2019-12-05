@@ -1,9 +1,6 @@
 package com.zhg.javakc.modules.smscke.relation.entity;
 
 import com.zhg.javakc.base.entity.BaseEntity;
-import com.zhg.javakc.modules.smscke.materials.entity.MaterialsEntity;
-import com.zhg.javakc.modules.smscke.organization.entity.OrganizationEntity;
-import com.zhg.javakc.modules.smscke.supplier.entity.SupplierEntity;
 
 /**
  *
@@ -16,9 +13,11 @@ public class RelationEntity extends BaseEntity<RelationEntity> {
     private String materialsId;
     private String taxRate;
     private String receiveOrganizationId;
-    private OrganizationEntity organizationEntity;
-    private MaterialsEntity materialsEntity;
-    private SupplierEntity supplierEntity;
+
+    private String organizationName;
+    private String supplierName;
+    private String materialsName;
+    private String receiveOrganizationName;
 
     public String getRelationId() {
         return relationId;
@@ -68,11 +67,35 @@ public class RelationEntity extends BaseEntity<RelationEntity> {
         this.receiveOrganizationId = receiveOrganizationId;
     }
 
-    public OrganizationEntity getOrganizationEntity() {
-        return organizationEntity;
+    public String getOrganizationName() {
+        return organizationName;
     }
 
-    public void setOrganizationEntity(OrganizationEntity organizationEntity) {
-        this.organizationEntity = organizationEntity;
+    public void setOrganizationName(String organizationName) {
+        this.organizationName = organizationName;
+    }
+
+    public String getSupplierName() {
+        return supplierName;
+    }
+
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
+    }
+
+    public String getMaterialsName() {
+        return materialsName;
+    }
+
+    public void setMaterialsName(String materialsName) {
+        this.materialsName = materialsName;
+    }
+
+    public String getReceiveOrganizationName() {
+        return receiveOrganizationName;
+    }
+
+    public void setReceiveOrganizationName(String receiveOrganizationName) {
+        this.receiveOrganizationName = receiveOrganizationName;
     }
 }

@@ -3,6 +3,7 @@ package com.zhg.javakc.modules.smscke.materials.entity;
 
 import com.zhg.javakc.base.entity.BaseEntity;
 
+import java.lang.reflect.Type;
 import java.util.Date;
 
 public class MaterialsEntity extends BaseEntity<MaterialsEntity> {
@@ -19,7 +20,7 @@ public class MaterialsEntity extends BaseEntity<MaterialsEntity> {
     //物资简述
     private String materialsDescribe;
     //图片
-    private String materialsImg;
+    private byte[] materialsImg;
     //是否赋码(0否1是)
     private String materialsTagging;
     //物资类型
@@ -115,11 +116,11 @@ public class MaterialsEntity extends BaseEntity<MaterialsEntity> {
         this.materialsDescribe = materialsDescribe;
     }
 
-    public String getMaterialsImg() {
+    public byte[] getMaterialsImg() {
         return materialsImg;
     }
 
-    public void setMaterialsImg(String materialsImg) {
+    public void setMaterialsImg(byte[] materialsImg) {
         this.materialsImg = materialsImg;
     }
 

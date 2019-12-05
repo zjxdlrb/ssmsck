@@ -22,18 +22,63 @@
 
 		SELECT
 		RELATION_ID "relationId",
-		O.ORGANIZATION_NAME "organizationId",
-		SUPPLIER_NAME "supplierId",
-		MATERIALS_NAME "materialsId",
+		O.ORGANIZATION_ID "organizationId",
+		O.ORGANIZATION_NAME "organizationName",
+		S.SUPPLIER_ID "supplierId",
+		SUPPLIER_NAME "supplierName",
+		M.MATERIALS_ID "materialsId",
+		MATERIALS_NAME "materialsName",
 		TAX_RATE "taxRate",
-		O1.ORGANIZATION_NAME "receiveOrganizationId"
+		O1.ORGANIZATION_ID "receiveOrganizationId",
+		O1.ORGANIZATION_NAME "receiveOrganizationName"
 		FROM SMSCKE_SM_RELATION R
 		LEFT JOIN SMSCKE_ORGANIZATION O ON R.ORGANIZATION_ID=O.ORGANIZATION_ID
 		LEFT JOIN SMSCKE_ORGANIZATION O1 ON R.RECEIVE_ORGANIZATION_ID=O1.ORGANIZATION_ID ,SMSCKE_SUPPLIER S,SMSCKE_MATERIALS M
 		WHERE R.SUPPLIER_ID=S.SUPPLIER_ID AND R.MATERIALS_ID=M.MATERIALS_ID
+		<if test="supplierId!='' and supplierId!=null">
+			AND R.SUPPLIER_ID =#{supplierId}
+		</if>
+		<if test="materialsId!='' and materialsId!=null">
+			AND R.MATERIALS_ID =#{materialsId}
+		</if>
+		<if test="organizationId!='' and organizationId!=null">
+			AND R.ORGANIZATION_ID =#{organizationId}
+		</if>
 	</select>
 
+	<insert id="insert">
+		INSERT INTO SMSCKE_SM_RELATION(RELATION_ID,ORGANIZATION_ID,SUPPLIER_ID,MATERIALS_ID,TAX_RATE,RECEIVE_ORGANIZATION_ID)
+		VALUES (#{relationId},#{organizationId},#{supplierId},#{materialsId},#{taxRate},#{receiveOrganizationId})
+	</insert>
 
+	<select id="get" resultType="com.zhg.javakc.modules.smscke.relation.entity.RelationEntity">
+		SELECT
+		RELATION_ID "relationId",
+		O.ORGANIZATION_ID "organizationId",
+		O.ORGANIZATION_NAME "organizationName",
+		S.SUPPLIER_ID "supplierId",
+		SUPPLIER_NAME "supplierName",
+		M.MATERIALS_ID "materialsId",
+		MATERIALS_NAME "materialsName",
+		TAX_RATE "taxRate",
+		O1.ORGANIZATION_ID "receiveOrganizationId",
+		O1.ORGANIZATION_NAME "receiveOrganizationName"
+		FROM SMSCKE_SM_RELATION R
+		LEFT JOIN SMSCKE_ORGANIZATION O ON R.ORGANIZATION_ID=O.ORGANIZATION_ID
+		LEFT JOIN SMSCKE_ORGANIZATION O1 ON R.RECEIVE_ORGANIZATION_ID=O1.ORGANIZATION_ID ,SMSCKE_SUPPLIER S,SMSCKE_MATERIALS M
+		WHERE R.SUPPLIER_ID=S.SUPPLIER_ID AND R.MATERIALS_ID=M.MATERIALS_ID
+		AND RELATION_ID=#{relationId}
+	</select>
+
+	<update id="update">
+		UPDATE SMSCKE_SM_RELATION
+		SET ORGANIZATION_ID=#{organizationId},SUPPLIER_ID=#{supplierId},MATERIALS_ID=#{materialsId},TAX_RATE=#{taxRate},RECEIVE_ORGANIZATION_ID=#{receiveOrganizationId}
+		WHERE RELATION_ID=#{relationId}
+	</update>
+
+	<delete id="delete">
+		DELETE FROM SMSCKE_SM_RELATION WHERE RELATION_ID=#{relationId}
+	</delete>
 
 	
 </mapper>

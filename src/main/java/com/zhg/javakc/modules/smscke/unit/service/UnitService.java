@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class UnitService extends BaseService<UnitDao, UnitEntity> {
@@ -22,5 +23,9 @@ public class UnitService extends BaseService<UnitDao, UnitEntity> {
         // 将查询数据设置到分页类的List集合当中，一起返回
         page.setList(unitList);
         return page;
+    }
+    public List<Map<String, Object>> findList()
+    {
+        return unitDao.findAll();
     }
 }
