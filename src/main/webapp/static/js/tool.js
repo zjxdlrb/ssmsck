@@ -54,6 +54,7 @@ $(function()
 		var url = root+$(this).attr('name');
 		window.open(url);
 	});
+
  	
 	//点击页面实现全选,反选功能
 	$('#checkall').click(function()
@@ -73,7 +74,8 @@ $(function()
 			$('#checkall').prop('checked', false);
 		}
 	});
-	
+
+
 	/**
      * 自定义(删除提示)函数
      * url: 调用删除的路径定制
@@ -121,6 +123,7 @@ $(function()
 				return false;
 			}
 		}
+
 		else if(type == 'delete')
 		{
 			if(selected == 0)

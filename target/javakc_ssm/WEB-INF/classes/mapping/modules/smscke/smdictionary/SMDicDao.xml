@@ -13,7 +13,11 @@
 		CREATEUSER "diccreateuser",
 		UPDATEUSER "dicupdateuser",
 		DELFLAG "dicdelflag"
-		FROM SMSCKE_DICTIONARY ORDER BY DICTIONARY_TYPE DESC
+		FROM SMSCKE_DICTIONARY
+			<if test="dictype != null and dictype != ''">
+				AND DICTIONARY_TYPE LIKE '%'||#{dictype}||'%'
+			</if>
+		ORDER BY DICTIONARY_TYPE DESC
 	</select>
 
 	<insert id="insert">

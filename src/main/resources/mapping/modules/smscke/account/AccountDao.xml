@@ -3,18 +3,49 @@
 <mapper namespace="com.zhg.javakc.modules.smscke.account.dao.AccountDao">
 
 
+    <!--多表查询-->
+	<resultMap id="accountSMDic" type="com.zhg.javakc.modules.smscke.account.entity.AccountEntity">
+		<id property="id" column="ID"/>
+		<result property="account" column="ACCOUNT"/>
+		<result property="type" column="TYPE"/>
+		<result property="username" column="USERNAME" />
+		<result property="password" column="PASSWORD" />
+		<result property="phone" column="PHONE" />
+		<result property="email" column="EMAIL" />
+		<result property="state" column="STATE" />
+		<result property="supplierid" column="SUPPLIER_ID" />
+
+		<!--关联的嵌套的select查询-->
+		<association property="dic" javaType="com.zhg.javakc.modules.smscke.smdictionary.entity.SMDicEntity">
+            <id property="dicid" column="DICTIONARY_ID"/>
+            <result property="dictype" column="DICTIONARY_TYPE" />
+            <result property="dicval" column="DICTIONARY_VAL" />
+        </association>
+	</resultMap>
+
+
+<!--	<cache type="org.mybatis.caches.ehcache.LoggingEhcache" >-->
+<!--		<property name="timeToIdleSeconds" value="3600"/>&lt;!&ndash;1 hour&ndash;&gt;-->
+<!--		<property name="timeToLiveSeconds" value="3600"/>&lt;!&ndash;1 hour&ndash;&gt;-->
+<!--		<property name="maxEntriesLocalHeap" value="1000"/>-->
+<!--		<property name="maxEntriesLocalDisk" value="10000000"/>-->
+<!--		<property name="memoryStoreEvictionPolicy" value="LRU"/>-->
+<!--	</cache>-->
+
 	<select id="findList" resultType="com.zhg.javakc.modules.smscke.account.entity.AccountEntity">
 		SELECT
-		ID "id",
-		ACCOUNT "account",
-		TYPE "type",
-		USERNAME "username",
-		PASSWORD "password",
-		PHONE "phone",
-		EMAIL "email",
-		STATE "state",
-		SUPPLIER_ID "supplierid"
-		FROM SMSCKE_ACCOUNT_MANAGEMENT
+		A.ID "id",
+		A.ACCOUNT "account",
+		A.USERNAME "username",
+		A.PASSWORD "password",
+		A.TYPE "type",
+		A.PHONE "phone",
+		A.EMAIL "email",
+		A.STATE "state",
+		A.SUPPLIER_ID "supplierid",
+		DIC.DICTIONARY_VAL "dicval",
+		DIC.DICTIONARY_ID "dicid"
+		FROM SMSCKE_ACCOUNT_MANAGEMENT A LEFT JOIN SMSCKE_DICTIONARY DIC ON A.TYPE = DIC.DICTIONARY_ID
 	</select>
 
 	<insert id="insert">
@@ -28,7 +59,7 @@
 	</select>
 
 	<update id="update">
-		UPDATE SMSCKE_ACCOUNT_MANAGEMENT SET ID=#{id},ACCOUNT=#{account},TYPE=#{type},USERNAME=#{username},PASSWORD=#{password},PHONE=#{phone},EMAIL=#{email},STATE=#{state},SUPPLIER_ID=#{supplierid}
+		UPDATE SMSCKE_ACCOUNT_MANAGEMENT SET TYPE=#{type},USERNAME=#{username},PHONE=#{phone},EMAIL=#{email},STATE=#{state},SUPPLIER_ID=#{supplierid} WHERE ID=#{id}
 	</update>
 
 </mapper>

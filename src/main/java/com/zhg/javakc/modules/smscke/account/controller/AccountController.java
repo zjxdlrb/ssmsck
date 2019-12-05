@@ -1,6 +1,5 @@
 package com.zhg.javakc.modules.smscke.account.controller;
 
-
 import com.zhg.javakc.base.page.Page;
 import com.zhg.javakc.base.util.CommonUtil;
 import com.zhg.javakc.modules.smscke.account.entity.AccountEntity;
@@ -26,6 +25,7 @@ public class AccountController {
     @RequestMapping("/query")
     public String query(AccountEntity accountEntity, ModelMap model,
                         HttpServletRequest request, HttpServletResponse response) throws Exception{
+
         model.put("page",accountService.query(new Page<AccountEntity>(request,response),accountEntity));
         model.put("accountEntity",accountEntity);
         return "smscke/account/list";
@@ -42,6 +42,7 @@ public class AccountController {
 
     @RequestMapping("/view")
     public String view(String ids,ModelMap modelMap){
+        System.out.println("++++++++++++++++++---------------");
         AccountEntity accountEntity=accountService.get(ids);
         modelMap.put("accountEntity",accountEntity);
         return "smscke/account/update";
