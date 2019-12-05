@@ -6,21 +6,7 @@
     <title>计量单位转换列表页面</title>
     <%@ include file="../../../common/jsp/header.jsp" %>
 </head>
-<script >
-    $(function() {
-        //选择父类触发事件
-        $('#menupid').click(function () {
-            layer.open({
-                type: 2,
-                title: '选择菜单父类',
-                shadeClose: true,
-                shade: 0.8,
-                area: ['65%', '65%'],
-                content: root + '/menu/createParent.do'
-            });
-        });
-    });
-</script>
+
 <body>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="ibox float-e-margins">
@@ -32,10 +18,10 @@
                 <div class="form-group">
 
                     <div class="col-sm-6">
-                        <label class="col-sm-2 control-label" for="menupid">物资</label>
+                        <label class="col-sm-2 control-label" for="materials">物资</label>
                         <div class="input-group">
-                            <input class="form-control" id="menupidValue" name="menuPid" type="hidden"/>
-                            <input class="form-control" id="menupid" type="text" readonly placeholder="请点击选择"/>
+                            <input class="form-control" id="materialsId" name="materialsId" type="hidden"/>
+                            <input class="form-control" id="materials" type="text" readonly placeholder="点击选择物资"/>
                         </div>
                     </div>
 
@@ -46,8 +32,8 @@
                                     name="smscke/unitc/create.jsp">
                                 <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>新增
                             </button>
-                            <button type="button" class="btn btn-warning" data-toggle="modal" id="search"
-                                    name="unitc/view.do">
+                            <button type="button" class="btn btn-warning" data-toggle="modal" id="query"
+                                    name="">
                                 <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>查询
                             </button>
                             <button type="button" class="btn btn-danger" data-toggle="modal" id="delete"
@@ -88,8 +74,6 @@
                             <td>${e.conversionRate}</td>
                             <td>${e.materialsUnitafter}</td>
                             <td>
-                                    <%--											<button type="button" class="btn btn-success" data-toggle="modal" id="update" name="unitc/view.do">--%>
-                                    <%--                                            <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>编辑</button>--%>
                                 <a href="JavaScript:update('${e.unitConversionid}');">编辑</a>
                             </td>
                         </tr>
@@ -109,6 +93,23 @@
         $("#searchForm").attr('action', url).submit();
 
     }
+    $(function(){
+            //选择父类触发事件
+            $('#materials').click(function () {
+                layer.open({
+                    type: 2,
+                    title: '选择菜单父类',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['65%', '65%'],
+                    content: root + '/materials/createParent.do'
+                });
+            });
+
+    $('#query').click(function(){
+        $('#searchForm').submit();
+    });
+    })
 </script>
 </body>
 </html>

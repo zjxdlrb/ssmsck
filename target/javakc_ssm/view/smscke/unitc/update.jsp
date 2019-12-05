@@ -8,9 +8,6 @@
 </head>
 <body>
 <div class="wrapper wrapper-content animated fadeInRight">
-    <%--			<div>--%>
-    <%--				<div class="col-sm-4"><input type="button" value="返回" class="btn btn-success" onclick="javascript:history.back();"/></div>--%>
-    <%--			</div>--%>
     <div class="ibox float-e-margins">
         <form action="${path }/unitc/update.do" method="post" class="form-horizontal" role="form">
             <input type="hidden" name="unitConversionid" id="unitConversionid" value="${unitcEntity.unitConversionid}"/>
