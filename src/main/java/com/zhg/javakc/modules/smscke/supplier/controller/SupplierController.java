@@ -28,6 +28,7 @@ public class SupplierController {
         ModelAndView modelAndView=new ModelAndView("smscke/supplier/list");
         Page<SupplierEntity> page=supplierService.querySupList(supplierEntity,new Page<SupplierEntity>(request,response));
         modelAndView.addObject("page",page);
+        modelAndView.addObject("supplierEntity",supplierEntity);
         return modelAndView;
     }
 
@@ -43,6 +44,12 @@ public class SupplierController {
             result+=random.nextInt(10);
         }
         System.out.println(result);
+        if(supplierEntity.getSupplierContract()==null){
+            supplierEntity.setSupplierContract("0");
+        }
+        if(supplierEntity.getSupplierShop()==null){
+            supplierEntity.setSupplierShop("0");
+        }
         supplierEntity.setSupplierCoding(result);
         supplierEntity.setSupplierClassify(null);
         supplierService.save(supplierEntity);
@@ -51,17 +58,17 @@ public class SupplierController {
     }
 
     @RequestMapping("/view")
-    public String view(String ids, ModelMap modelMap){
-        System.out.println(ids);
-        SupplierEntity supplierEntity=supplierService.get(ids);
+    public String view(String supplierId, ModelMap modelMap){
+        System.out.println(supplierId);
+        SupplierEntity supplierEntity=supplierService.get(supplierId);
         modelMap.put("supplierEntity",supplierEntity);
         return "smscke/supplier/update";
     }
 
     @RequestMapping("/View")
-    public String View(String ids, ModelMap modelMap){
-        System.out.println(ids);
-        SupplierEntity supplierEntity=supplierService.get(ids);
+    public String View(String supplierId, ModelMap modelMap){
+        System.out.println(supplierId);
+        SupplierEntity supplierEntity=supplierService.get(supplierId);
         modelMap.put("supplierEntity",supplierEntity);
         return "smscke/supplier/show";
     }
@@ -69,9 +76,22 @@ public class SupplierController {
     @RequestMapping("/update")
     public String update(SupplierEntity supplierEntity){
         supplierEntity.setSupplierClassify(null);
+        if(supplierEntity.getSupplierContract()==null){
+            supplierEntity.setSupplierContract("0");
+        }
+        if(supplierEntity.getSupplierShop()==null){
+            supplierEntity.setSupplierShop("0");
+        }
         supplierService.update(supplierEntity);
         return "redirect:querySupList.do";
     }
+
+//    @RequestMapping("/delete")
+//    public String delete(String[] ids){
+//        supplierService.delete(ids);
+//        return "redirect:querySupList.do";
+//    }
+
 
     @RequestMapping("/createParent")
 //    @ResponseBody

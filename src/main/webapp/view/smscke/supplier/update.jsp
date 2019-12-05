@@ -111,12 +111,12 @@
                     <div class="row">
                         <label class="col-sm-1 control-label" for="ds_host">启用门户</label>
                         <div class="col-sm-3">
-                            <input type="checkbox" id="supplierShop" value="0" name="supplierShop" onclick="this.value=(this.value==0)?1:0" ${supplierEntity.supplierShop == 1?"checked":""}>
+                            <input type="checkbox" id="supplierShop" value="${supplierEntity.supplierShop}" name="supplierShop" onclick="this.value=(this.value==0)?1:0" ${supplierEntity.supplierShop == 1?"checked":""}>
                         </div>
 
                         <label class="col-sm-1 control-label" for="ds_host">必须合同</label>
                         <div class="col-sm-3">
-                            <input type="checkbox" name="supplierContract" id="supplierContract" value="0"  onclick="this.value=(this.value==0)?1:0" ${supplierEntity.supplierContract == 1?"checked":""}>
+                            <input type="checkbox" name="supplierContract" id="supplierContract" value="${supplierEntity.supplierContract}"  onclick="this.value=(this.value==0)?1:0" ${supplierEntity.supplierContract == 1?"checked":""}>
                         </div>
                     </div>
 
